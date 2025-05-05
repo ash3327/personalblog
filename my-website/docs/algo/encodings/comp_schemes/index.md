@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Compression Schemes
 
 ## Image Storing and File Sizes
@@ -18,14 +22,24 @@ $$W\times H\times C\times L\times F$$
 
 ## Compression Schemes
 
+Types:
 * Lossless
 * Lossy
 
-### RLE 
+Reducing bitstream:
+* Redundancy
+  * Statistical (Spatial and Temporal)
+  * Semantic
+  * Psychovisual (we may not notice some differences)
+    * ![alt text](image-4.png)
+    * ![alt text](image-5.png)
 
-All-white image of size $8\times 8$: `255,64`
+### Steps
+![alt text](image-6.png)
 
-![alt text](image-1.png)
+### Trade-off
+
+![alt text](image-9.png)
 
 ### Multimedia Coding Standards
 
