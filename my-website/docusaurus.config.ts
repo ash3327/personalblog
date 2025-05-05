@@ -130,6 +130,7 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        {to: '/life-in-weeks', label: 'Life in Weeks 生命倒計時', position: 'left'},
         {to: '/blog', label: 'Blog 博客', position: 'left'},
         {to: '/blog_old', label: 'Tech Blog 技術博客', position: 'left'},
         {
