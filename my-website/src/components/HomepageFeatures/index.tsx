@@ -1,77 +1,12 @@
 import {useRef, useEffect} from 'react';
 import type {ReactNode} from 'react';
+import { FaGithub } from 'react-icons/fa';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import {FeatureList, type FeatureItem} from '@site/src/data/projects';
 
-type FeatureItem = {
-  title: string;
-  image: string;
-  description: ReactNode;
-  link: string;
-  badges: string[];
-};
-
-const FeatureList: FeatureItem[] = [
-  {
-    title: 'Vision Transformer Analysis',
-    image: '/img/docs/vit/image4.png',
-    description: 'Comparative study of Vision Transformers vs CNNs on small datasets',
-    link: 'https://github.com/ash3327/proj-vision-transformer',
-    badges: ['PyTorch', 'Computer Vision'],
-  },
-  {
-    title: 'ARG Prediction with Transformers',
-    image: '/img/docs/prottrans/image.png',
-    description: 'Fine-tuned ProtTrans model for antibiotic resistance gene classification with 0.94 F-score',
-    link: 'https://github.com/ash3327/aist4010-coursework-asm2-protein-transformer',
-    badges: ['Transformers', 'Bioinformatics'],
-  },
-  {
-    title: 'Deep Q-Learning Agent',
-    image: 'https://github.com/ash3327/ash3327/assets/86100752/60f36fa1-d6fd-490b-b275-19bb1cbe9715',
-    description: 'Reinforcement learning agent achieving 30× higher performance in custom Gym environment',
-    link: 'https://github.com/ash3327/SnowFight',
-    badges: ['Python', 'Gymnasium', 'Reinforcement Learning'],
-  },
-  {
-    title: 'U-Net Segmentation',
-    image: '/img/docs/unet/unet_1.png',
-    description: '99.55% pixel accuracy on Carvana dataset',
-    link: 'https://github.com/ash3327/ImageSegmentation-UNet',
-    badges: ['PyTorch', 'Segmentation'],
-  },
-  {
-    title: 'YOLO Object Tracking',
-    image: '/img/docs/yolo-1/vid3.gif',
-    description: 'Improved instance tracking with custom algorithm from outputs of YOLOv8',
-    link: 'https://github.com/ash3327/ObjectDetection-v1',
-    badges: ['YOLO', 'Object Detection'],
-  },
-  {
-    title: 'GAN Generation',
-    image: '/img/docs/gan/v5.gif',
-    description: 'WGAN implementation on MNIST dataset',
-    link: 'https://github.com/ash3327/GAN-self-learn-v1',
-    badges: ['PyTorch', 'GAN'],
-  },
-  {
-    title: 'Event-Planning App "Oasis"',
-    image: '/img/docs/oasis/image.png',
-    description: 'Android event planning app with robust notification system and SQL database',
-    link: 'https://github.com/ash3327/OasisPlanner/tree/development',
-    badges: ['Java', 'Android', 'RoomDB'],
-  },
-  {
-    title: 'P2P Communication App',
-    image: '/img/docs/p2p/image.png',
-    description: 'Real-time audio/video streaming with optimized packet synchronization',
-    link: 'https://github.com/ash3327/Peer-to-Peer-Communication-App',
-    badges: ['Python'],
-  },
-];
-
-function Feature({title, image, description, link, badges}: FeatureItem) {
+function Feature({title, image, description, link, githubLink, badges}: FeatureItem) {
   return (
     <div className={styles.featureCard}>
       <div className={styles.featureImage}>
@@ -88,6 +23,9 @@ function Feature({title, image, description, link, badges}: FeatureItem) {
               {badge}
             </span>
           ))}
+          <a href={githubLink} className={styles.githubBadge} target="_blank" rel="noopener noreferrer">
+            <FaGithub className={styles.githubIcon} /> GitHub
+          </a>
         </div>
       </div>
     </div>
