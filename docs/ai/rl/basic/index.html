@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai docs-version-current docs-doc-page docs-doc-id-rl/basic/index" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Basic Theory of Reinforcement Learning | Sam&#x27;s Portfolio</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://ash3327.github.io/blog/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://ash3327.github.io/blog/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://ash3327.github.io/blog/docs/ai/rl/basic/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-current"><meta data-rh="true" property="og:title" content="Basic Theory of Reinforcement Learning | Sam&#x27;s Portfolio"><meta data-rh="true" name="description" content="The Reinforcement Problem"><meta data-rh="true" property="og:description" content="The Reinforcement Problem"><link data-rh="true" rel="icon" href="/blog/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://ash3327.github.io/blog/docs/ai/rl/basic/"><link data-rh="true" rel="alternate" href="https://ash3327.github.io/blog/docs/ai/rl/basic/" hreflang="en"><link data-rh="true" rel="alternate" href="https://ash3327.github.io/blog/docs/ai/rl/basic/" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/blog/rss.xml" title="Sam&#39;s Portfolio RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/blog/atom.xml" title="Sam&#39;s Portfolio Atom Feed">
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/blog/blog_old/rss.xml" title="Sam&#39;s Portfolio RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/blog_old/atom.xml" title="Sam&#39;s Portfolio Atom Feed">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous"><link rel="stylesheet" href="/blog/assets/css/styles.40526b60.css">
+<script src="/blog/assets/js/runtime~main.2821dbe4.js" defer="defer"></script>
+<script src="/blog/assets/js/main.0cd5f48d.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/blog/"><b class="navbar__title text--truncate">SamKHT</b></a><a class="navbar__item navbar__link" href="/blog/life-in-weeks">Life in Weeks 生命倒計時</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/blog/">Blog 博客</a><a class="navbar__item navbar__link" href="/blog/docs/base/intro">Prog 編程</a><a class="navbar__item navbar__link" href="/blog/docs/algo/intro/">Algo 算法</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/blog/docs/ai/intro">AI 人工智能</a><a class="navbar__item navbar__link" href="/blog/docs/interests/intro">Interests 興趣</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/ash3327" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link fa-github fa-brands fa-xl" aria-label="GitHub"></a><a href="https://linkedin.com/in/khtam-51a008256" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link fa-linkedin fa-brands fa-xl" aria-label="LinkedIn"></a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/blog/docs/ai/intro">Artificial Intelligence</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/blog/docs/ai/rl/">Reinforcement Learning</a><button aria-label="Collapse sidebar category &#x27;Reinforcement Learning&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/blog/docs/ai/rl/basic/">Basic Theory of Reinforcement Learning</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/blog/docs/ai/rl/dqn/">Deep Q-Network (DQN)</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/blog/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/blog/docs/ai/rl/"><span itemprop="name">Reinforcement Learning</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Basic Theory of Reinforcement Learning</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Basic Theory of Reinforcement Learning</h1></header>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-reinforcement-problem">The Reinforcement Problem<a href="#the-reinforcement-problem" class="hash-link" aria-label="Direct link to The Reinforcement Problem" title="Direct link to The Reinforcement Problem">​</a></h2>
+<ul>
+<li>Involves learning <strong>what to do</strong> - to map situations to actions - to maximize a numerical reward signal.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="characteristics-and-challenges">Characteristics and Challenges<a href="#characteristics-and-challenges" class="hash-link" aria-label="Direct link to Characteristics and Challenges" title="Direct link to Characteristics and Challenges">​</a></h3>
+<ul>
+<li><strong>Closed-loop problems:</strong> Learning system&#x27;s action influence later inputs</li>
+<li>Not having direct instructions as to what actions to take<!-- -->
+<ul>
+<li>Difference with traditional learning:<!-- -->
+<ul>
+<li>Learner not told which actions to take</li>
+<li>Discover which actions yield the most reward by trying them out</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Actions may affect not only immediate reward, but also next situation (and all subsequent rewards)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="specifications-of-rl-problem">Specifications of RL Problem<a href="#specifications-of-rl-problem" class="hash-link" aria-label="Direct link to Specifications of RL Problem" title="Direct link to Specifications of RL Problem">​</a></h3>
+<ul>
+<li><strong>Sensation</strong>: Agent must be able to sense the state of the environment to some extent</li>
+<li><strong>Action</strong>: Able to take actions that affect the state</li>
+<li><strong>Goal</strong>: Have a goal or goals relating to the state of the environment</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="challenges">Challenges<a href="#challenges" class="hash-link" aria-label="Direct link to Challenges" title="Direct link to Challenges">​</a></h3>
+<ul>
+<li>Trade-off between Exploration and Exploitation:<!-- -->
+<ul>
+<li><em>Exploit</em> what it already knows to obtain reward</li>
+<li><em>Explore</em> to make better action selections in the future</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="interesting-aspects">Interesting Aspects<a href="#interesting-aspects" class="hash-link" aria-label="Direct link to Interesting Aspects" title="Direct link to Interesting Aspects">​</a></h3>
+<ul>
+<li>Considers the whole problem of a goal-directed agent interacting with an uncertain environment<!-- -->
+<ul>
+<li>Supervised approaches - Focuses on isolated subproblems instead</li>
+<li>RL: Have explicit goals, can choose actions to influence their environments</li>
+</ul>
+</li>
+<li>[Historic] RL is part of a larger trend back toward simple general principles<!-- -->
+<ul>
+<li>Since 1960s, researchers presumed no general principles exist, intelligence depends only on possession of heuristics and special purpose tricks</li>
+<li><em>Hypothesis</em>: Intelligence is based on number of relevant facts</li>
+<li>General principles (searching/learning) were considerd weak methods.</li>
+</ul>
+</li>
+<li>Types:<!-- -->
+<ul>
+<li>Game with adversary (eg Tic Tac Toe)</li>
+<li>Game against nature (no external adversary)</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="elements-of-reinforcement-learning">Elements of Reinforcement Learning<a href="#elements-of-reinforcement-learning" class="hash-link" aria-label="Direct link to Elements of Reinforcement Learning" title="Direct link to Elements of Reinforcement Learning">​</a></h2>
+<ul>
+<li><strong>Observations / States of Environments</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>t</mi></msub><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">s_t\in S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal" style="margin-right:0.05764em">S</span></span></span></span></li>
+<li><strong>Actions</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>t</mi></msub><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">a_t\in A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal">A</span></span></span></span></li>
+<li><strong>Policy</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mo>∈</mo><mi mathvariant="normal">Π</mi></mrow><annotation encoding="application/x-tex">\pi\in\Pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em"></span><span class="mord mathnormal" style="margin-right:0.03588em">π</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord">Π</span></span></span></span>: A mapping from perceived states of environment <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>∈</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">s\in S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal" style="margin-right:0.05764em">S</span></span></span></span> to actions to be taken when in those states <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">a\in A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal">A</span></span></span></span>.<!-- -->
+<ul>
+<li><em>Similar</em>: Psychology: Stimulus-response rules / associations</li>
+<li>Possible:<!-- -->
+<ul>
+<li>Simple function / lookup table, or</li>
+<li>Extensive computation, eg a search process</li>
+</ul>
+</li>
+<li>Policies can be stochastic</li>
+</ul>
+</li>
+<li><strong>Reward Signal</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">r_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span></span></span></span>: Environment sends to the reinforcement learning agent a single number (the reward) for the agent to maximize in the long run.</li>
+<li>Overall flow:<!-- -->
+<ul>
+<li>Environment states -&gt; Agent -&gt; Actions -&gt; Reward</li>
+</ul>
+</li>
+<li><strong>Value Function</strong>: Specifies what is good in the long run<!-- -->
+<ul>
+<li>Reward: Immediate desirability of environmental states</li>
+<li>Value: long-term desirability of states, taking into account the future states that are likely to follow, and rewards available in those states</li>
+<li><em>Analogy</em>:<!-- -->
+<ul>
+<li>Reward: Pleasure/Pain</li>
+<li>Value: More refined and farsighted judgement of how pleased or displeased is this environment state</li>
+</ul>
+</li>
+<li>Hard to determine (must be estimated from the sequences of observations that an agent makes over its entire lifetime)</li>
+</ul>
+</li>
+<li><strong>Model</strong>: Mimics the behavior of the environment, predicts the next state and reward given a state an action<!-- -->
+<ul>
+<li>Used for planning</li>
+<li>Model-based (planning) vs model-free methods (trial-and-error learners)</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="updating-the-value-function">Updating the Value Function<a href="#updating-the-value-function" class="hash-link" aria-label="Direct link to Updating the Value Function" title="Direct link to Updating the Value Function">​</a></h2>
+<p>Given <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em"></span><span class="mord mathnormal">s</span></span></span></span> the state before the greedy move, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><annotation encoding="application/x-tex">s&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7519em"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em"><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> the state after the move, the update to the estimated value of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em"></span><span class="mord mathnormal">s</span></span></span></span> is:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right" columnspacing=""><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>V</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>←</mo><mi>V</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>+</mo><mi>α</mi><mo stretchy="false">[</mo><mi>V</mi><mo stretchy="false">(</mo><msup><mi>s</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo>−</mo><mi>V</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+V(s)\leftarrow V(s)+\alpha[V(s&#x27;)-V(s)]
+\end{align*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.5em;vertical-align:-0.5em"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1em"><span style="top:-3.16em"><span class="pstrut" style="height:3em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em">V</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">←</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mord mathnormal" style="margin-right:0.22222em">V</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mord mathnormal" style="margin-right:0.0037em">α</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.22222em">V</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8019em"><span style="top:-3.113em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mord mathnormal" style="margin-right:0.22222em">V</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)]</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5em"><span></span></span></span></span></span></span></span></span></span></span></span>
+<p>where the small <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha&gt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em"></span><span class="mord mathnormal" style="margin-right:0.0037em">α</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0</span></span></span></span> is the step-size parameter that influence the rate of learning.</p>
+<p>[[N - Gerry Tesauro - Backgammon]]</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="history">History<a href="#history" class="hash-link" aria-label="Direct link to History" title="Direct link to History">​</a></h2>
+<ul>
+<li><strong>Optimal Control</strong> (1950s): Problem of designing a controller to minimize a measure of dynamical system&#x27;s behavior over time<!-- -->
+<ul>
+<li>Approaches:<!-- -->
+<ul>
+<li>[[Per - Richard Bellman]]</li>
+<li>[[Per - Hamilton and Jacobi]]</li>
+<li>Dynamical system&#x27;s state,</li>
+<li>Value function / &quot;Optimal Return Function&quot;</li>
+<li>[[N - Bellman Equation]] (1957)</li>
+<li>[[Markov Decision Processes]] (1957)</li>
+<li>Policy Iteration, Ronald Howard, 1960</li>
+<li>Dynamic Programming (late 1950s)<!-- -->
+<ul>
+<li>Problem: Curse of dimensionality (computational requirements grow exponentialy w the number of state variables)</li>
+</ul>
+</li>
+<li>Extensions to partially observable MDPs (Lovejoy 1991), Approximation methods (Survey: Rust 1996), Asynchronous methods (Bertsekas, 1982, 1983)</li>
+<li>History over optimal control (Bryson 1996)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/blog/docs/ai/rl/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Reinforcement Learning</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/blog/docs/ai/rl/dqn/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Deep Q-Network (DQN)</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#the-reinforcement-problem" class="table-of-contents__link toc-highlight">The Reinforcement Problem</a><ul><li><a href="#characteristics-and-challenges" class="table-of-contents__link toc-highlight">Characteristics and Challenges</a></li><li><a href="#specifications-of-rl-problem" class="table-of-contents__link toc-highlight">Specifications of RL Problem</a></li><li><a href="#challenges" class="table-of-contents__link toc-highlight">Challenges</a></li><li><a href="#interesting-aspects" class="table-of-contents__link toc-highlight">Interesting Aspects</a></li></ul></li><li><a href="#elements-of-reinforcement-learning" class="table-of-contents__link toc-highlight">Elements of Reinforcement Learning</a></li><li><a href="#updating-the-value-function" class="table-of-contents__link toc-highlight">Updating the Value Function</a></li><li><a href="#history" class="table-of-contents__link toc-highlight">History</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Sam K. H. Tam. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,9 +1,0 @@
-{
-    "navigation": {
-      "main": [
-        { "label": "Home", "url": "/" },
-        { "label": "Experience", "url": "/aboutme" },
-        { "label": "Projects", "url": "/experience"}
-      ]
-    }
-}
