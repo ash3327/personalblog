@@ -35,4 +35,7 @@ $I_o=f_{\text{filter}}(I_i^\text{window})$
 ## Transformation
 
 * Geometric transformation to an image
+* Eg rotation, translation
+  * Method: for $I_\text{out}$ being a transformation $T$ over input $I_\text{in}$, we can use the inverse transform on the variables:
+  * $I_\text{out}(x,y)=I_\text{in}(T^{-1}(x,y))$
 

@@ -16,21 +16,6 @@ sidebar_position: 2
   * $y[n]=x*h=\sum_{m=-\infty}^\infty{x[m]h[n-m]}$
   * Continuous ver: $y(t)=(2\pi)^{-1}\int_{-\infty}^{+\infty}{x(\delta)h(t-\delta)d\delta}$
 
-## Spatial Filters
-
-* Box filter
-  * Non-isotropic (orientation-dependent)
-  * Sharp boundary
-* Gaussian filter
-  * $k(x,y)=A\cdot \exp{\left(-\frac{x^2+y^2}{2\sigma^2}\right)}$
-  * Normally truncated at around $2\sigma$ radius.
-* Sharpening:
-  * $I_\text{sharpen}=I+\alpha(1-F_\text{blur}(I))$
-  * Sharpening kernel $F_\text{sharpen}=((1+\alpha)F_\text{identity}-\alpha F_\text{blur})$
-  * Problem:
-    * Also blur the boundary while sharpening the other parts.
-    * Median filter
-
 ## Linear and Bicubic Interpolation
 
 ### Nearest Neighbour

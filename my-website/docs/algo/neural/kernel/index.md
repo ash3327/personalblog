@@ -2,13 +2,7 @@
 sidebar_position: 3
 ---
 
-# Kernels and Neural Network
-
-## Spatial Filters
-
-* Box filter of size $n$.
-* Gaussian filter
-  * $k(x,y)=A\cdot\exp{\left(-\frac{x^2+y^2}{2\sigma^2}\right)}$
+# Computer Vision
 
 ## Evaluation Metrics
 
@@ -74,6 +68,14 @@ sidebar_position: 3
     * ![alt text](image-4.png)
   * GAN
     * ![alt text](image-5.png)
+    * Problems:
+      * Mode collapse
+      * Non-convergence (oscillation in parameters)
+      * Diminished gradients
+      * Overfitting (unbalance between generator and discriminator)
+    * Later Works:
+      * StyleGAN, BigGAN: Conditioning
+    * GAN inversion: Find $E(I)=z$ for $G(z)=I$.
 ![alt text](image-11.png)
 
 ### Auto-Encoder
