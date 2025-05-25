@@ -35,10 +35,10 @@ We believe:
 
 ## Code Maintenance
 _Most part of the features are still under development._
-- [Design Reference on Code Structure](markdowns/code_structure.md)
+- [Design Reference on Code Structure](https://github.com/ash3327/OasisPlanner/tree/development/markdowns/code_structure.md)
 
 ## Design
-- [Design Document](markdowns/first_draft_design_doc.png)
+- [Design Document](https://github.com/ash3327/OasisPlanner/tree/development/markdowns/first_draft_design_doc.png)
 - Note: In the deisgn document, some feature designs are copied from existing apps. Such designs will ONLY BE USED AS A BASIC REFERENCE, and the final product WILL NOT include the exact same design.
 
 ## Our Plan

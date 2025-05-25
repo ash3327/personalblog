@@ -5,16 +5,18 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import {FeatureList, type FeatureItem} from '@site/src/data/projects';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 function Feature({title, image, description, link, githubLink, badges}: FeatureItem) {
+  const {siteConfig} = useDocusaurusContext();
   return (
     <div className={styles.featureCard}>
       <div className={styles.featureImage}>
-        <img src={image} alt={title} />
+        <img src={`/${siteConfig.projectName}/${image}`} alt={title} />
       </div>
       <div className={styles.featureContent}>
         <Heading as="h3">
-          <a href={link}>{title}</a>
+          <a href={`/${siteConfig.projectName}/${link}`}>{title}</a>
         </Heading>
         <p>{description}</p>
         <div className={styles.badges}>
