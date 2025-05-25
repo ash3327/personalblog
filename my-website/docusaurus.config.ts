@@ -7,8 +7,8 @@ import rehypeKatex from 'rehype-katex';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: "Sam's Portfolio",
+  tagline: "Machine Learning Engineer & Software Developer",
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -132,7 +132,7 @@ const config: Config = {
       items: [
         {to: '/life-in-weeks', label: 'Life in Weeks 生命倒計時', position: 'left'},
         {to: '/blog', label: 'Blog 博客', position: 'left'},
-        {to: '/blog_old', label: 'Tech Blog 技術博客', position: 'left'},
+        // {to: '/blog_old', label: 'Tech Blog 技術博客', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
