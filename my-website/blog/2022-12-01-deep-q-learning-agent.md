@@ -34,7 +34,7 @@ image: https://github.com/ash3327/ash3327/assets/86100752/60f36fa1-d6fd-490b-b27
 - Player has limited vision range.
 - Game ends when a zombie touches the player.
 - Image: Human Gameplay; Art: Myself; AI training: Myself; Observation and Reward Design: Myself & Jerry; Game Code: Jerry & Myself
-<img src="/img/docs/snowfight/gameplay-human-1.gif" width="300" height="300" />
+<img src="/personalblog/img/docs/snowfight/gameplay-human-1.gif" width="300" height="300" />
 
 ## Model
 - Deep Q-Network (DQN) model for agent training.
@@ -46,7 +46,7 @@ image: https://github.com/ash3327/ash3327/assets/86100752/60f36fa1-d6fd-490b-b27
 - Tested multiple decay factors (gamma).
 - Adjusted rewards to improve agent's learning on long-term dependencies.
 - Achieving an average kill streak of 7 and quadrupling survival time, far surpassing the random baseline of 0.22 kills on average.
-<img src="/img/docs/snowfight/results-1.png" width="400" height="400" />
+<img src="/personalblog/img/docs/snowfight/results-1.png" width="400" height="400" />
 
 ## Notable Behaviors (1)
 - AI learns to control its orientation for precise shooting.
@@ -56,12 +56,12 @@ image: https://github.com/ash3327/ash3327/assets/86100752/60f36fa1-d6fd-490b-b27
 ## Notable Behaviors (2)
 - AI learns to evade zombies by retreating to the map corner.
 - AI retreats to a corner for better firing coverage.
-<img src="/img/docs/snowfight/results-2.gif" width="300" height="300" />
+<img src="/personalblog/img/docs/snowfight/results-2.gif" width="300" height="300" />
 
 ## Notable Behaviors (3)
 - AI adopts a spinning and frequent shooting strategy.
 - AI spins and shoots frequently to maximize hits.
-<img src="/img/docs/snowfight/results-3.gif" width="300" height="300" />
+<img src="/personalblog/img/docs/snowfight/results-3.gif" width="300" height="300" />
 
 ## Future Directions
 - Further training needed due to time constraints of this project.

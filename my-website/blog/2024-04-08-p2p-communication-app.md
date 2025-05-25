@@ -30,14 +30,14 @@ A fork of the project in the semester 2023-24 Term 2, creating a peer-to-peer co
     <td>Audio Recording</td>
   </tr>
   <tr>
-    <td><img src="/img/docs/p2p/image-1.png" alt="Chatroom Creation &amp; User Alias"/></td>
-    <td><img src="/img/docs/p2p/image-2.png" alt="Audio Recording"/></td>
+    <td><img src="/personalblog/img/docs/p2p/image-1.png" alt="Chatroom Creation &amp; User Alias"/></td>
+    <td><img src="/personalblog/img/docs/p2p/image-2.png" alt="Audio Recording"/></td>
   </tr>
   <tr>
     <td colspan="2">Screen Sharing</td>
   </tr>
   <tr>
-    <td colspan="2"><img src="/img/docs/p2p/image-3.png" alt="Screen Sharing"/></td>
+    <td colspan="2"><img src="/personalblog/img/docs/p2p/image-3.png" alt="Screen Sharing"/></td>
   </tr>
 </table>
 

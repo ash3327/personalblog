@@ -4,7 +4,7 @@ description: WGAN implementation on MNIST dataset
 slug: gan-generation
 # authors: [ash3327]
 tags: [Project, PyTorch, GAN, Deep Learning, Generative Models]
-image: /img/docs/gan/v5.gif
+image: /personalblog/img/docs/gan/v5.gif
 ---
 
 [![View Project](https://img.shields.io/badge/View_Project-GAN%20Generation-4285F4?style=flat&logo=github&logoColor=white)](https://github.com/ash3327/GAN-self-learn-v1)
@@ -60,9 +60,9 @@ Explored various GAN architectures:
          <th>v4 (100 epochs)</th>
       </tr>
       <tr>
-         <td><img src="/img/docs/gan/v2.png" width="200" height="200" /></td>
-         <td><img src="/img/docs/gan/v3.png" width="200" height="200" /></td>
-         <td><img src="/img/docs/gan/v4.gif" width="200" height="200" /></td>
+         <td><img src="/personalblog/img/docs/gan/v2.png" width="200" height="200" /></td>
+         <td><img src="/personalblog/img/docs/gan/v3.png" width="200" height="200" /></td>
+         <td><img src="/personalblog/img/docs/gan/v4.gif" width="200" height="200" /></td>
       </tr>
    </table>
 
@@ -73,7 +73,7 @@ Explored various GAN architectures:
          <th>v5 (100 epochs)</th>
       </tr>
       <tr>
-         <td><img src="/img/docs/gan/v5.gif" width="200" height="200" /></td>
+         <td><img src="/personalblog/img/docs/gan/v5.gif" width="200" height="200" /></td>
       </tr>
    </table>
 

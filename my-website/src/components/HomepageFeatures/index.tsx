@@ -12,11 +12,11 @@ function Feature({title, image, description, link, githubLink, badges}: FeatureI
   return (
     <div className={styles.featureCard}>
       <div className={styles.featureImage}>
-        <img src={`/${siteConfig.projectName}/${image}`} alt={title} />
+        <img src={image.startsWith('/') ? `/${siteConfig.projectName}${image}` : image} alt={title} />
       </div>
       <div className={styles.featureContent}>
         <Heading as="h3">
-          <a href={`/${siteConfig.projectName}/${link}`}>{title}</a>
+          <a href={link.startsWith('/') ? `/${siteConfig.projectName}${link}` : link}>{title}</a>
         </Heading>
         <p>{description}</p>
         <div className={styles.badges}>

@@ -4,7 +4,7 @@ description: "99.55% pixel accuracy on Carvana dataset"
 slug: unet-segmentation
 # authors: [ash3327]
 tags: [Project, PyTorch, Segmentation, Computer Vision, Deep Learning]
-image: /img//img/docs/unet/unet/unet_1.png
+image: /img/docs/unet/unet/unet_1.png
 ---
 
  [![View Project](https://img.shields.io/badge/View_Project-U--Net%20Segmentation-4285F4?style=flat&logo=github&logoColor=white)](https://github.com/ash3327/ImageSegmentation-UNet)
