@@ -12,6 +12,15 @@ export type FeatureItem = {
 
 export const FeatureList: FeatureItem[] = [
   {
+    title: 'General Hand Gesture Recognition',
+    image: '/img/docs/fyp/image.png',
+    description: 'Unified contrastive learning framework for hand gesture recognition with curriculum-based augmentation',
+    link: '/blog/hand-gesture-recognition',
+    githubLink: 'https://github.com/ash3327/major-fyp-2024',
+    badges: ['PyTorch', 'Computer Vision', 'Contrastive Learning'],
+    slug: 'hand-gesture-recognition',
+  },
+  {
     title: 'Vision Transformer Analysis',
     image: '/img/docs/vit/image4.png',
     description: 'Comparative study of Vision Transformers vs CNNs on small datasets',
