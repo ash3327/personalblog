@@ -8,6 +8,8 @@ export type FeatureItem = {
   githubLink: string;
   badges: string[];
   slug: string;
+  highlighted?: boolean;
+  date: string;
 };
 
 export const FeatureList: FeatureItem[] = [
@@ -19,6 +21,8 @@ export const FeatureList: FeatureItem[] = [
     githubLink: 'https://github.com/ash3327/major-fyp-2024',
     badges: ['PyTorch', 'Computer Vision', 'Contrastive Learning'],
     slug: 'hand-gesture-recognition',
+    highlighted: true,
+    date: 'Sep 2024 - Apr 2025'
   },
   {
     title: 'Vision Transformer Analysis',
@@ -28,6 +32,8 @@ export const FeatureList: FeatureItem[] = [
     githubLink: 'https://github.com/ash3327/proj-vision-transformer',
     badges: ['PyTorch', 'Computer Vision'],
     slug: 'vision-transformer-analysis',
+    highlighted: true,
+    date: 'Jun 2023 - Apr 2024'
   },
   {
     title: 'ARG Prediction with Transformers',
@@ -37,6 +43,7 @@ export const FeatureList: FeatureItem[] = [
     githubLink: 'https://github.com/ash3327/aist4010-coursework-asm2-protein-transformer',
     badges: ['Transformers', 'Bioinformatics'],
     slug: 'arg-prediction-transformers',
+    date: 'Feb 2024 - Mar 2024'
   },
   {
     title: 'Deep Q-Learning Agent',
@@ -46,6 +53,8 @@ export const FeatureList: FeatureItem[] = [
     githubLink: 'https://github.com/ash3327/SnowFight',
     badges: ['Python', 'Gymnasium', 'Reinforcement Learning'],
     slug: 'deep-q-learning-agent',
+    highlighted: true,
+    date: 'Oct 2023 - Dec 2023'
   },
   {
     title: 'U-Net Segmentation',
@@ -55,6 +64,7 @@ export const FeatureList: FeatureItem[] = [
     githubLink: 'https://github.com/ash3327/ImageSegmentation-UNet',
     badges: ['PyTorch', 'Segmentation'],
     slug: 'unet-segmentation',
+    date: 'Jun 2023 - Apr 2024'
   },
   {
     title: 'YOLO Object Tracking',
@@ -64,6 +74,7 @@ export const FeatureList: FeatureItem[] = [
     githubLink: 'https://github.com/ash3327/ObjectDetection-v1',
     badges: ['YOLO', 'Object Detection'],
     slug: 'yolo-object-tracking',
+    date: 'Jun 2023 - Apr 2024'
   },
   {
     title: 'GAN Generation',
@@ -73,6 +84,7 @@ export const FeatureList: FeatureItem[] = [
     githubLink: 'https://github.com/ash3327/GAN-self-learn-v1',
     badges: ['PyTorch', 'GAN'],
     slug: 'gan-generation',
+    date: 'Jun 2023 - Apr 2024'
   },
   {
     title: 'Event-Planning App "Oasis"',
@@ -82,6 +94,8 @@ export const FeatureList: FeatureItem[] = [
     githubLink: 'https://github.com/ash3327/OasisPlanner/tree/development',
     badges: ['Java', 'Android', 'RoomDB'],
     slug: 'oasis-event-planning-app',
+    highlighted: true,
+    date: 'Mar 2023 - Jan 2024'
   },
   {
     title: 'P2P Communication App',
@@ -91,5 +105,7 @@ export const FeatureList: FeatureItem[] = [
     githubLink: 'https://github.com/ash3327/Peer-to-Peer-Communication-App',
     badges: ['Python'],
     slug: 'p2p-communication-app',
-  },
+    highlighted: true,
+    date: 'Jan 2024 - Apr 2024'
+  }
 ]; 

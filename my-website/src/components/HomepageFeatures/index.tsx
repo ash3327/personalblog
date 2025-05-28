@@ -1,16 +1,17 @@
-import {useRef, useEffect} from 'react';
+import {useRef, useEffect, useState} from 'react';
 import type {ReactNode} from 'react';
 import { FaGithub } from 'react-icons/fa';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
-import {FeatureList, type FeatureItem} from '@site/src/data/projects';
+import {FeatureList, type FeatureItem} from '../../data/projects';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-function Feature({title, image, description, link, githubLink, badges}: FeatureItem) {
+function Feature({title, image, description, link, githubLink, badges, highlighted, date}: FeatureItem) {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <div className={styles.featureCard}>
+    <div className={clsx(styles.featureCard, highlighted && styles.highlightedCard)}>
+      {highlighted && <div className={styles.highlightedBadge}>Featured</div>}
       <div className={styles.featureImage}>
         <img src={image.startsWith('/') ? `/${siteConfig.projectName}${image}` : image} alt={title} />
       </div>
@@ -19,8 +20,9 @@ function Feature({title, image, description, link, githubLink, badges}: FeatureI
           <a href={link.startsWith('/') ? `/${siteConfig.projectName}${link}` : link}>{title}</a>
         </Heading>
         <p>{description}</p>
+        <p className={styles.date}>{date}</p>
         <div className={styles.badges}>
-          {badges.map((badge, idx) => (
+          {badges.map((badge: string, idx: number) => (
             <span key={idx} className={styles.badge}>
               {badge}
             </span>
@@ -36,6 +38,11 @@ function Feature({title, image, description, link, githubLink, badges}: FeatureI
 
 export default function HomepageFeatures(): ReactNode {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [showFeaturedOnly, setShowFeaturedOnly] = useState(true);
+
+  const filteredProjects = showFeaturedOnly 
+    ? FeatureList.filter(project => project.highlighted)
+    : FeatureList;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -51,33 +58,37 @@ export default function HomepageFeatures(): ReactNode {
         const cardCenter = cardRect.left + cardRect.width / 2;
         const distanceFromCenter = Math.abs(cardCenter - containerCenter);
         const maxDistance = containerRect.width / 2;
-        const scale = 1 - (distanceFromCenter / maxDistance) * 0.3; // Adjust 0.3 to control the fisheye intensity
-        const opacity = 1 - (distanceFromCenter / maxDistance) * 0.5; // Adjust 0.5 to control opacity falloff
+        const scale = 1 - (distanceFromCenter / maxDistance) * 0.3;
+        const opacity = 1 - (distanceFromCenter / maxDistance) * 0.5;
 
         (card as HTMLElement).style.transform = `scale(${scale})`;
         (card as HTMLElement).style.opacity = `${opacity}`;
       });
     };
 
-    // Initial update
     updateFisheye();
-
-    // Update on scroll
     container.addEventListener('scroll', updateFisheye);
-
-    // Update on resize
     window.addEventListener('resize', updateFisheye);
 
     return () => {
       container.removeEventListener('scroll', updateFisheye);
       window.removeEventListener('resize', updateFisheye);
     };
-  }, []);
+  }, [showFeaturedOnly]); // Re-run effect when filter changes
 
   return (
     <section className={styles.features}>
+      <div className={styles.sectionHeader}>
+        <h2>🚀 Projects</h2>
+        <button 
+          className={clsx(styles.toggleButton, !showFeaturedOnly && styles.active)}
+          onClick={() => setShowFeaturedOnly(!showFeaturedOnly)}
+        >
+          {showFeaturedOnly ? 'Show All Projects' : 'Show Featured Only'}
+        </button>
+      </div>
       <div className={styles.featuresContainer} ref={containerRef}>
-        {FeatureList.map((props, idx) => (
+        {filteredProjects.map((props: FeatureItem, idx: number) => (
           <Feature key={idx} {...props} />
         ))}
       </div>
