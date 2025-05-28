@@ -2,26 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ash3327.github.io/personalblog/blog</id>
     <title>Sam's Portfolio Blog</title>
-    <updated>2025-05-20T00:00:00.000Z</updated>
+    <updated>2025-04-15T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ash3327.github.io/personalblog/blog"/>
     <subtitle>Sam's Portfolio Blog</subtitle>
     <icon>https://ash3327.github.io/personalblog/img/favicon.ico</icon>
-    <entry>
-        <title type="html"><![CDATA[5月規劃]]></title>
-        <id>https://ash3327.github.io/personalblog/blog/2025/05/20/intro</id>
-        <link href="https://ash3327.github.io/personalblog/blog/2025/05/20/intro"/>
-        <updated>2025-05-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[經過了二月到五月期間衆多的 Projects、Reports 的困擾之後，到了五月末似乎終於有些時間能夠讓自己沉澱一下、重整一下自己對未來的規劃。]]></summary>
-        <content type="html"><![CDATA[<p>經過了二月到五月期間衆多的 Projects、Reports 的困擾之後，到了五月末似乎終於有些時間能夠讓自己沉澱一下、重整一下自己對未來的規劃。</p>
-<p>本身自己對 Reinforcement Learning 的興趣就比較大，但前陣子有些陷入了與他人的比較之中，反而失去了本來對知識的熱情。</p>
-<p>這周打算重溫曾經大二時上過的 RL，並重新翻新 SnowFight 這一個 Project。</p>
-<p>希望能夠避免自己進入拖延症的狀態中。</p>
-<hr>
-<p>今天暫時復習了 RL 的基礎
-關於 Stanford, Sutton Bartol 的 Reinforcement Learning 的 Ex 1</p>]]></content>
-        <category label="Daily 日常" term="Daily 日常"/>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Project: General Hand Gesture Recognition]]></title>
         <id>https://ash3327.github.io/personalblog/blog/hand-gesture-recognition</id>
