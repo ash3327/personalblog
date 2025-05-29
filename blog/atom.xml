@@ -85,6 +85,86 @@ This section is a summary generated from the <a href="https://github.com/ash3327
         <category label="Deep Learning" term="Deep Learning"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Project: Named Entity Recognition]]></title>
+        <id>https://ash3327.github.io/personalblog/blog/ner-project</id>
+        <link href="https://ash3327.github.io/personalblog/blog/ner-project"/>
+        <updated>2025-04-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Unified contrastive learning framework for hand gesture recognition with curriculum-based augmentation]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://github.com/ash3327/aist3120-ner-project" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/View_Project-Event--Planning%20App%20'Oasis'-4285F4?style=flat&amp;logo=github&amp;logoColor=white" alt="View Project" class="img_ev3q"></a></p>
+<p><a href="https://github.com/ash3327/aist3120-ner-project/blob/main/AIST3120_Final_Project_Report.pdf" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Final%20Report-blue?style=for-the-badge" alt="Final Report" class="img_ev3q"></a>
+<a href="https://github.com/ash3327/aist3120-ner-project/blob/main/project_description.pdf" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Project%20Description-green?style=for-the-badge" alt="Project Description" class="img_ev3q"></a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="https://ash3327.github.io/personalblog/blog/ner-project#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>This project aims to explore methodologies related to Named Entity Recognition.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="methodology">Methodology<a href="https://ash3327.github.io/personalblog/blog/ner-project#methodology" class="hash-link" aria-label="Direct link to Methodology" title="Direct link to Methodology">​</a></h3>
+<p>The project evaluated three distinct deep learning architectures for Named Entity Recognition (NER):</p>
+<ul>
+<li><strong>SpaCy:</strong> (Responsible: Square) Explored the key approaches used in the SpaCy library, including hash embeddings and trasition-based models.</li>
+<li><strong>BERT (Bidirectional Encoder Representations from Transformers):</strong> (Responsible: Sam/Ash) Fine-tuned the <code>bert-base-cased</code> model over NER task, with following modifications:<!-- -->
+<ul>
+<li><strong>Aggregation Strategies:</strong> Improved aggregation method to make sure that each input word is not split into parts in the output.</li>
+<li><strong>Masking:</strong> Masked by chance 15% of named entities in the training data and adjusted the leraning rate and number of epochs for the fine-tuning process to test if encouraging the utilization of nearby context could improve the generalizability over unseen named-entities.</li>
+</ul>
+</li>
+<li><strong>Gemma 3 (Decoder LLM):</strong> (Responsible: Square) Tested the performance by using decoder LLMs on NER tasks, guided using prompt engineering. Ensured JSON output. Evaluated on both zero-shot (only instructions) and few-shot (instructions plus examples) cases.</li>
+</ul>
+<p>For more experimental data, please see the <a href="https://github.com/ash3327/aist3120-ner-project/blob/main/AIST3120_Final_Project_Report.pdf" target="_blank" rel="noopener noreferrer">report</a> for more information.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="job-allocation">Job Allocation<a href="https://ash3327.github.io/personalblog/blog/ner-project#job-allocation" class="hash-link" aria-label="Direct link to Job Allocation" title="Direct link to Job Allocation">​</a></h2>
+<ul>
+<li>Sam: BERT experiments</li>
+<li>Square: SpaCy and Gemma 3 experiments</li>
+<li>Quinson: Literature review and result analysis</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="other-references">Other References<a href="https://ash3327.github.io/personalblog/blog/ner-project#other-references" class="hash-link" aria-label="Direct link to Other References" title="Direct link to Other References">​</a></h3>
+<ul>
+<li><a href="https://huggingface.co/docs/transformers/main/en/tasks/masked_language_modeling" target="_blank" rel="noopener noreferrer">https://huggingface.co/docs/transformers/main/en/tasks/masked_language_modeling</a></li>
+<li><a href="https://huggingface.co/docs/transformers/main/en/tasks/token_classification" target="_blank" rel="noopener noreferrer">https://huggingface.co/docs/transformers/main/en/tasks/token_classification</a></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="metric">Metric<a href="https://ash3327.github.io/personalblog/blog/ner-project#metric" class="hash-link" aria-label="Direct link to Metric" title="Direct link to Metric">​</a></h2>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>F-</mtext><mi>β</mi></mrow><annotation encoding="application/x-tex">\text{F-}\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord text"><span class="mord">F-</span></span><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span> score, reduces to F-1 score when <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\beta=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal" style="margin-right:0.05278em">β</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">1</span></span></span></span>:
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>β</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false">(</mo><msup><mi>β</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>×</mo><mtext>precision</mtext><mo>×</mo><mtext>recall</mtext></mrow><mrow><msup><mi>β</mi><mn>2</mn></msup><mo>×</mo><mtext>precision</mtext><mo>+</mo><mtext>recall</mtext></mrow></mfrac></mrow><annotation encoding="application/x-tex">F_\beta=\frac{(\beta^2+1)\times\text{precision}\times\text{recall}}{\beta^2\times\text{precision}+\text{recall}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05278em">β</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:1.59em;vertical-align:-0.4811em"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1089em"><span style="top:-2.655em"><span class="pstrut" style="height:3em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05278em">β</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463em"><span style="top:-2.786em;margin-right:0.0714em"><span class="pstrut" style="height:2.5em"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mbin mtight">×</span><span class="mord text mtight"><span class="mord mtight">precision</span></span><span class="mbin mtight">+</span><span class="mord text mtight"><span class="mord mtight">recall</span></span></span></span></span><span style="top:-3.23em"><span class="pstrut" style="height:3em"></span><span class="frac-line" style="border-bottom-width:0.04em"></span></span><span style="top:-3.485em"><span class="pstrut" style="height:3em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05278em">β</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em"><span style="top:-2.931em;margin-right:0.0714em"><span class="pstrut" style="height:2.5em"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mclose mtight">)</span><span class="mbin mtight">×</span><span class="mord text mtight"><span class="mord mtight">precision</span></span><span class="mbin mtight">×</span><span class="mord text mtight"><span class="mord mtight">recall</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4811em"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<p>where, precision and recalls are evaluated on whether the named entity is being identified (and matches exactly as the one in the data file).</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="aggregation-methods">Aggregation Methods<a href="https://ash3327.github.io/personalblog/blog/ner-project#aggregation-methods" class="hash-link" aria-label="Direct link to Aggregation Methods" title="Direct link to Aggregation Methods">​</a></h2>
+<ul>
+<li>Custom Decoding (Implemented by Square): Token-wise merging of class labels.<!-- -->
+<ul>
+<li>Problems: Sometimes words are truncated.</li>
+<li>Example:<!-- -->
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">False Positives [('PER', 'Shane War')]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">False Negatives [('PER', 'Shane Warne')]</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ul>
+</li>
+<li>aggregation_strategy="max": Runs best among different aggregation strategies.<!-- -->
+<ul>
+<li>Problems: Since tokenization can be different, sometimes words that were in the same "token" in the input does not stay as the same token after Bert tokenization, which make aggregation fail to cover that.</li>
+<li>Example:<!-- -->
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token string" style="color:rgb(255, 121, 198)">'Pau-Orthez'</span><span class="token plain"> </span><span class="token comment" style="color:rgb(98, 114, 164)"># Input token</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token string" style="color:rgb(255, 121, 198)">'Pau'</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">'Orthez'</span><span class="token plain"> </span><span class="token comment" style="color:rgb(98, 114, 164)"># Output ('-' is not classified as a part of the name)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ul>
+</li>
+<li>v3 aggregation strategy:<!-- -->
+<ul>
+<li>Custom aggregation strategy in <code>masked_bert_ner.py</code> that ensures that each input token is treated as a whole.</li>
+</ul>
+</li>
+<li>Seqeval: Package for evaluation.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="results-raw">Results (*raw)<a href="https://ash3327.github.io/personalblog/blog/ner-project#results-raw" class="hash-link" aria-label="Direct link to Results (*raw)" title="Direct link to Results (*raw)">​</a></h2>
+<p>Metric: Precision/Recall/F1 Score</p>
+<p><strong>Aggregation Method Results</strong></p>
+<table><thead><tr><th>Model</th><th>Precision</th><th>Recall</th><th>F1</th></tr></thead><tbody><tr><td>Simple</td><td>0.5804</td><td>0.7350</td><td>0.6486</td></tr><tr><td>First</td><td>0.8318</td><td>0.8890</td><td>0.8595</td></tr><tr><td>Average</td><td>0.8368</td><td>0.8791</td><td>0.8574</td></tr><tr><td>Max</td><td>0.8359</td><td>0.8817</td><td>0.8582</td></tr><tr><td>Custom</td><td><strong>0.9124</strong></td><td><strong>0.9189</strong></td><td><strong>0.9157</strong></td></tr></tbody></table>
+<p><strong>Masking Method Results</strong></p>
+<table><thead><tr><th>Model</th><th>Precision</th><th>Recall</th><th>F1</th></tr></thead><tbody><tr><td><strong>CoNLL-2003 (Test)</strong></td><td></td><td></td><td></td></tr><tr><td>Distillbert-Cased fine-tune (no mask)</td><td>0.8927</td><td><strong>0.9032</strong></td><td><strong>0.8979</strong></td></tr><tr><td>Bert-Base-Cased fine-tune (masked)</td><td><strong>0.8929</strong></td><td>0.8948</td><td>0.8939</td></tr><tr><td><strong>WikiAnn (Test) (Not trained on)</strong></td><td></td><td></td><td></td></tr><tr><td>Distillbert-Cased fine-tune (no mask)</td><td><strong>0.4603</strong></td><td><strong>0.5134</strong></td><td><strong>0.4854</strong></td></tr><tr><td>Bert-Base-Cased (masked)</td><td>0.4577</td><td>0.5080</td><td>0.4816</td></tr></tbody></table>
+<p><strong>CoNLL-2003 Results</strong></p>
+<table><thead><tr><th>Model</th><th>Precision</th><th>Recall</th><th>F1</th></tr></thead><tbody><tr><td>Bert-Base-NER</td><td><strong>0.9124</strong></td><td><strong>0.9189</strong></td><td><strong>0.9157</strong></td></tr><tr><td>Distillbert-cased fine-tuned (no mask)</td><td>0.8927</td><td>0.9032</td><td>0.8979</td></tr><tr><td>SpaCy Medium</td><td>0.6618</td><td>0.5758</td><td>0.6158</td></tr><tr><td>SpaCy Large</td><td>0.6850</td><td>0.6317</td><td>0.6573</td></tr><tr><td>Gemma 3 27B (zero-shot)</td><td>0.6361</td><td>0.7489</td><td>0.6879</td></tr><tr><td>Gemma 3 27B (few-shot)</td><td>0.6689</td><td>0.7620</td><td>0.7125</td></tr></tbody></table>
+<p><strong>WikiAnn Results</strong></p>
+<table><thead><tr><th>Model</th><th>Precision</th><th>Recall</th><th>F1</th></tr></thead><tbody><tr><td>Bert-Base-NER</td><td><strong>0.4786</strong></td><td><strong>0.5287</strong></td><td><strong>0.5024</strong></td></tr><tr><td>Distillbert-cased fine-tuned (no mask)</td><td>0.4603</td><td>0.5134</td><td>0.4854</td></tr><tr><td>Spacy Medium</td><td>0.4002</td><td>0.3905</td><td>0.3953</td></tr><tr><td>Spacy Large</td><td>0.4051</td><td>0.3987</td><td>0.4019</td></tr></tbody></table>]]></content>
+        <category label="Project" term="Project"/>
+        <category label="HuggingFace" term="HuggingFace"/>
+        <category label="Natural Language Processing" term="Natural Language Processing"/>
+        <category label="Transformers" term="Transformers"/>
+        <category label="Deep Learning" term="Deep Learning"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Project: Event-Planning App "Oasis"]]></title>
         <id>https://ash3327.github.io/personalblog/blog/oasis-event-planning-app</id>
         <link href="https://ash3327.github.io/personalblog/blog/oasis-event-planning-app"/>
@@ -160,6 +240,7 @@ This section is a summary generated from the <a href="https://github.com/ash3327
 </li>
 </ul>]]></content>
         <category label="Project" term="Project"/>
+        <category label="Self Project" term="Self Project"/>
         <category label="Java" term="Java"/>
         <category label="Android" term="Android"/>
         <category label="RoomDB" term="RoomDB"/>
@@ -211,7 +292,7 @@ This section is a summary generated from the <a href="https://github.com/ash3327
         <link href="https://ash3327.github.io/personalblog/blog/vision-transformer-analysis"/>
         <updated>2024-04-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Comparative study of Vision Transformers vs CNNs on small datasets]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://github.com/ash3327/proj-vision-transformer" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/View_Project-Vision%20Transformer%20Analysis-4285F4?style=flat&amp;logo=github&amp;logoColor=white" alt="View Project" class="img_ev3q"></a></p>
+        <content type="html"><![CDATA[<p><a href="https://github.com/ash3327/proj-vision-transformer" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/View_Project-Vision%20Transformer%20Analysis-4285F4?style=flat&amp;logo=github&amp;logoColor=white" alt="View Project" class="img_ev3q"></a> <a href="https://github.com/ash3327/proj-vision-transformer/blob/master/project-final-report-1155175983.pdf" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Final%20Report-blue.svg" alt="Report" class="img_ev3q"></a></p>
 <p><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Python-3776AB.svg?logo=python&amp;logoColor=white" alt="Python" class="img_ev3q"></a>
 <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?logo=pytorch&amp;logoColor=white" alt="PyTorch" class="img_ev3q"></a>
 <a href="https://arxiv.org/abs/1505.04597" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Paper-UNet-green?logo=arxiv&amp;color=green" alt="UNet" class="img_ev3q"></a>
@@ -336,6 +417,68 @@ This section is a summary generated from the <a href="https://github.com/ash3327
         <category label="Protein Analysis" term="Protein Analysis"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Project: U-Net Segmentation]]></title>
+        <id>https://ash3327.github.io/personalblog/blog/unet-segmentation</id>
+        <link href="https://ash3327.github.io/personalblog/blog/unet-segmentation"/>
+        <updated>2023-08-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[99.55% pixel accuracy on Carvana dataset]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://github.com/ash3327/ImageSegmentation-UNet" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/View_Project-U--Net%20Segmentation-4285F4?style=flat&amp;logo=github&amp;logoColor=white" alt="View Project" class="img_ev3q"></a></p>
+<p><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Python-3776AB.svg?logo=python&amp;logoColor=white" alt="Python" class="img_ev3q"></a>
+<a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?logo=pytorch&amp;logoColor=white" alt="PyTorch" class="img_ev3q"></a>
+<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Artificial%20Intelligence%20(AI)-orange.svg?logo=ai&amp;logoColor=white" alt="Artificial Intelligence (AI)" class="img_ev3q">
+<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Image%20Segmentation-red.svg?logo=segmentation&amp;logoColor=white" alt="Image Segmentation" class="img_ev3q">
+<a href="https://www.kaggle.com/competitions/carvana-image-masking-challenge" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Kaggle-Carvana%20Image%20Masking%20Challenge-blue.svg?logo=kaggle&amp;logoColor=white" alt="Carvana Image Masking Challenge" class="img_ev3q"></a>
+<a href="https://www.cityscapes-dataset.com/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Dataset-Cityscapes%20Dataset-00BFFF.svg?logo=data:image/png;base64,iVBORw0KGg&amp;logoColor=white" alt="Cityscapes Dataset" class="img_ev3q"></a>
+<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Last%20Updated-December%202023-green.svg" alt="Last Updated: December 2023" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="backup-of-old-project-december-2023">Backup of Old Project (December 2023)<a href="https://ash3327.github.io/personalblog/blog/unet-segmentation#backup-of-old-project-december-2023" class="hash-link" aria-label="Direct link to Backup of Old Project (December 2023)" title="Direct link to Backup of Old Project (December 2023)">​</a></h2>
+<p>This is a backup of an old project focused on training a U-Net model from scratch for semantic segmentation from scratch on the Cityscapes dataset and Carvana dataset. The images are DOWNSCALED to speed up the training process for learning purposes.</p>
+<p>The model has been trained and tested with the following results:</p>
+<blockquote>
+<p>[!WARNING]
+If you are looking for a high-quality model, this is NOT the place. This is only a practice exercise when I was in year 2.</p>
+</blockquote>
+<blockquote>
+<p>[!NOTE]
+Training is done long ago and some parameters recorded, such as the number of epochs, may not be accurate</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]
+This project is done few years ago from the point of writing this documentation. Back then, the training details are not documented properly and the jupyter notebook results are not saved for each experiment. The results are not excellent either. Sorry for the inconvenience.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="experiments">Experiments<a href="https://ash3327.github.io/personalblog/blog/unet-segmentation#experiments" class="hash-link" aria-label="Direct link to Experiments" title="Direct link to Experiments">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="carvana-dataset-carvana-image-masking-challenge-dataset-carvana-image-masking-challenge">Carvana Dataset (Carvana Image Masking Challenge Dataset) <a href="https://www.kaggle.com/competitions/carvana-image-masking-challenge" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Kaggle-Carvana%20Image%20Masking%20Challenge-blue.svg?logo=kaggle&amp;logoColor=white" alt="Carvana Image Masking Challenge" class="img_ev3q"></a><a href="https://ash3327.github.io/personalblog/blog/unet-segmentation#carvana-dataset-carvana-image-masking-challenge-dataset-carvana-image-masking-challenge" class="hash-link" aria-label="Direct link to carvana-dataset-carvana-image-masking-challenge-dataset-carvana-image-masking-challenge" title="Direct link to carvana-dataset-carvana-image-masking-challenge-dataset-carvana-image-masking-challenge">​</a></h3>
+<p>Dataset information</p>
+<ul>
+<li>Original image dimension: 1918 x 1280</li>
+<li>Training image dimension: 160 x 240 and 320 x 480</li>
+</ul>
+<p>Validation accuracies (highest)</p>
+<ul>
+<li>Validation Pixel Accuracy: <strong>0.9955</strong></li>
+<li>Validation Dice Score: <strong>0.9911</strong></li>
+</ul>
+<h3 align="center"> Results </h3>
+<p>Results on test set: (Top: Prediction, Bottom: Reference)</p>
+<p><img decoding="async" loading="lazy" alt="alt text" src="https://ash3327.github.io/personalblog/assets/images/image-041267cdfd77e346a9d0e0d7d422bb48.png" width="520" height="341" class="img_ev3q"></p>
+<p>Results on train set: (Top: Prediction, Bottom: Reference)</p>
+<p><img decoding="async" loading="lazy" alt="alt text" src="https://ash3327.github.io/personalblog/assets/images/image2-78057b4210e74b5ab7ccbaae64eb9529.png" width="518" height="341" class="img_ev3q"></p>
+<p>Inspection of intermediate layers: (In the order: Prediction, Output of Downsampling Block 1, Output of Bottleneck Block, Output of Upsampling Block 1, Reference)</p>
+<p><img decoding="async" loading="lazy" alt="alt text" src="https://ash3327.github.io/personalblog/assets/images/image4-341eb0e84099144c4c517f3738e0f883.png" width="1008" height="501" class="img_ev3q"></p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Details of the experiments</summary><div><div class="collapsibleContent_i85q"><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Normalization: mean 0, std 1</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Augments:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        transforms.RandomHorizontalFlip(p=0.5),</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        transforms.RandomVerticalFlip(p=0.1),</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        transforms.RandomRotation(degrees=35),</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**29/12/2023 17:15: result12_**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 160 x 240</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 32</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 5e-7</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: StepLR: step_size=5, gamma=0.85</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Epochs: 42</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Final: Test accuracy: 90.9%, Avg loss: 0.403125, Test recall: 0.5831877589225769, precision: 0.980972170829773</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**30/12/2023 08:40: result13_**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 160 x 240</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 32</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 1e-4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: ReduceLROnPlateau: patience=5</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Epochs: 50</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Final: Test accuracy: 81.0%, Avg loss: 0.775568, Test recall: 0.1010913997888565, precision: 0.9727051258087158</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**30/12/2023 11:33: result14_**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 160 x 240</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 32</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 1e-4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: ReduceLROnPlateau: patience=5</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Epochs: 100</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Final:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test accuracy: 96.6%, Avg loss: 0.210099, Test recall: 0.9129086136817932, precision: 0.927651584148407</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**30/12/2023 15:47: 1703922437**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 160 x 240</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 16</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 1e-4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: None</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test accuracy: 99.5%, Avg loss: 0.013175, </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test recall: 0.9918522238731384, precision: 0.9872172474861145, dice_score: 0.9895293116569519</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**30/12/2023 16:49: 1703926149**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 320 x 480</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 8</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 1e-4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: None</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test accuracy: 99.6%, Avg loss: 0.009994, </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test recall: 0.9942919611930847, precision: 0.9879629611968994, dice_score: 0.9911173582077026</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div></div></details>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cityscapes-dataset-cityscapes-dataset-cityscapes-dataset">Cityscapes Dataset (Cityscapes Dataset) <a href="https://www.cityscapes-dataset.com/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Dataset-Cityscapes%20Dataset-00BFFF.svg?logo=data:image/png;base64,iVBORw0KGg&amp;logoColor=white" alt="Cityscapes Dataset" class="img_ev3q"></a><a href="https://ash3327.github.io/personalblog/blog/unet-segmentation#cityscapes-dataset-cityscapes-dataset-cityscapes-dataset" class="hash-link" aria-label="Direct link to cityscapes-dataset-cityscapes-dataset-cityscapes-dataset" title="Direct link to cityscapes-dataset-cityscapes-dataset-cityscapes-dataset">​</a></h3>
+<ul>
+<li>Test Pixel Accuracy: <strong>0.8669</strong></li>
+<li>The code for evaluating the mAP for the cityscape dataset has been lost. The code in this repository does not reflect the true results.</li>
+</ul>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">1704279189_cityscapes/model_1704284109.h5: </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**Documented:** </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test acc: 0.8402184247970581, Test loss: 0.6274673556908965</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
+        <category label="Project" term="Project"/>
+        <category label="PyTorch" term="PyTorch"/>
+        <category label="Segmentation" term="Segmentation"/>
+        <category label="Computer Vision" term="Computer Vision"/>
+        <category label="Deep Learning" term="Deep Learning"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Project: YOLO Object Tracking]]></title>
         <id>https://ash3327.github.io/personalblog/blog/yolo-object-tracking</id>
         <link href="https://ash3327.github.io/personalblog/blog/yolo-object-tracking"/>
@@ -431,85 +574,12 @@ This section is a summary generated from the <a href="https://github.com/ash3327
         <category label="Tracking" term="Tracking"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Project: GAN Generation]]></title>
-        <id>https://ash3327.github.io/personalblog/blog/gan-generation</id>
-        <link href="https://ash3327.github.io/personalblog/blog/gan-generation"/>
-        <updated>2023-06-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[WGAN implementation on MNIST dataset]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://github.com/ash3327/GAN-self-learn-v1" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/View_Project-GAN%20Generation-4285F4?style=flat&amp;logo=github&amp;logoColor=white" alt="View Project" class="img_ev3q"></a></p>
-<p><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Python-3776AB.svg?logo=python&amp;logoColor=white" alt="Python" class="img_ev3q"></a>
-<a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?logo=pytorch&amp;logoColor=white" alt="PyTorch" class="img_ev3q"></a>
-<img decoding="async" loading="lazy" src="https://img.shields.io/badge/GAN-Generative%20Adversarial%20Networks-blueviolet.svg" alt="Generative Adversarial Networks" class="img_ev3q">
-<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Dataset-MNIST-blue.svg" alt="MNIST Dataset" class="img_ev3q">
-<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Last%20Updated-August%202022-green.svg" alt="Last Updated: August 2022" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="backup-of-gan-learning-project-august-2022">Backup of GAN Learning Project (August 2022)<a href="https://ash3327.github.io/personalblog/blog/gan-generation#backup-of-gan-learning-project-august-2022" class="hash-link" aria-label="Direct link to Backup of GAN Learning Project (August 2022)" title="Direct link to Backup of GAN Learning Project (August 2022)">​</a></h2>
-<blockquote>
-<p>[!NOTE]
-The project explores various GAN architectures and improvements through iterative versions.</p>
-</blockquote>
-<blockquote>
-<p>[!IMPORTANT]
-This project is a personal learning exercise in understanding and implementing different GAN techniques.</p>
-</blockquote>
-<p>This project re-implemented GAN, WGAN and conditional GAN and explored the typical problems that occurred with GAN-based architectures like mode collapse and sensitivity to hyperparameters.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="references">References<a href="https://ash3327.github.io/personalblog/blog/gan-generation#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References">​</a></h2>
-<ul>
-<li>The YouTube video series "Generative Adversarial Networks (GANs)", Aladdin Persson, at <a href="https://www.youtube.com/playlist?list=PLhhyoLH6IjfwIp8bZnzX8QR30TRcHO8Va" target="_blank" rel="noopener noreferrer">https://www.youtube.com/playlist?list=PLhhyoLH6IjfwIp8bZnzX8QR30TRcHO8Va</a></li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="setups">Setups<a href="https://ash3327.github.io/personalblog/blog/gan-generation#setups" class="hash-link" aria-label="Direct link to Setups" title="Direct link to Setups">​</a></h2>
-<p><strong>Environment</strong>:</p>
-<ul>
-<li>Python version: 3.x</li>
-<li>Framework: PyTorch</li>
-<li>Dataset: MNIST</li>
-<li>Runned on Google Colab</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="experiments">Experiments<a href="https://ash3327.github.io/personalblog/blog/gan-generation#experiments" class="hash-link" aria-label="Direct link to Experiments" title="Direct link to Experiments">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mnist-digit-generation">MNIST Digit Generation<a href="https://ash3327.github.io/personalblog/blog/gan-generation#mnist-digit-generation" class="hash-link" aria-label="Direct link to MNIST Digit Generation" title="Direct link to MNIST Digit Generation">​</a></h3>
-<p>Explored various GAN architectures:</p>
-<ul>
-<li>Standard GAN</li>
-<li>Wasserstein GAN (WGAN)</li>
-<li>Conditional WGAN</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-experiments">Key Experiments<a href="https://ash3327.github.io/personalblog/blog/gan-generation#key-experiments" class="hash-link" aria-label="Direct link to Key Experiments" title="Direct link to Key Experiments">​</a></h3>
-<ul>
-<li>Experimented with different learning rates</li>
-<li>Observed the phoenomenon of mode collapse and the sensitivity of the GAN architecture to the learning rate</li>
-<li>Understanding the architecture of GAN, improvements made by WGAN, and also the principles of providing class conditions to GANs</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="experiment-results">Experiment Results<a href="https://ash3327.github.io/personalblog/blog/gan-generation#experiment-results" class="hash-link" aria-label="Direct link to Experiment Results" title="Direct link to Experiment Results">​</a></h3>
-<ol>
-<li>
-<p>Vanilla GAN
-<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208011748_GAN_mnist_v2%20good/202208011748_GAN_mnist_v2_final.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v2-blue.svg" alt="Version v2" class="img_ev3q"></a>
-<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208021155_GAN_mnist_v3%20good%2Cinterupted/202208021155_GAN_mnist_v3.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v3-blue.svg" alt="Version v3" class="img_ev3q"></a>
-<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208041411_GAN_mnist_v4%20faster%20GAN/202208031401_GAN_mnist_v4_epoch100_ed.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v4-blue.svg" alt="Version v4" class="img_ev3q"></a></p>
-<table><tbody><tr><th>v2 (100 epochs)</th><th>v3 (35 epochs *early stopped)</th><th>v4 (100 epochs)</th></tr><tr><td><img src="https://ash3327.github.io/personalblog/img/docs/gan/v2.png" width="200" height="200"></td><td><img src="https://ash3327.github.io/personalblog/img/docs/gan/v3.png" width="200" height="200"></td><td><img src="https://ash3327.github.io/personalblog/img/docs/gan/v4.gif" width="200" height="200"></td></tr></tbody></table>
-</li>
-<li>
-<p>Wasserstein GAN (WGAN)
-<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208051901_GAN_mnist_v5_WGAN/202208051901_GAN_mnist_v5_WGAN%20epoch100.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v5-blue.svg" alt="Version v5" class="img_ev3q"></a></p>
-<table><tbody><tr><th>v5 (100 epochs)</th></tr><tr><td><img src="https://ash3327.github.io/personalblog/img/docs/gan/v5.gif" width="200" height="200"></td></tr></tbody></table>
-</li>
-<li>
-<p>Conditional Wasserstein GAN (incomplete)
-<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208061306_GAN_mnist_v6_conditional%20WGAN/202208061306_GAN_mnist_v6_Conditional_WGAN.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v6-blue.svg" alt="Version v6" class="img_ev3q"></a></p>
-</li>
-</ol>]]></content>
-        <category label="Project" term="Project"/>
-        <category label="PyTorch" term="PyTorch"/>
-        <category label="GAN" term="GAN"/>
-        <category label="Deep Learning" term="Deep Learning"/>
-        <category label="Generative Models" term="Generative Models"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Project: Deep Q-Learning Agent]]></title>
         <id>https://ash3327.github.io/personalblog/blog/deep-q-learning-agent</id>
         <link href="https://ash3327.github.io/personalblog/blog/deep-q-learning-agent"/>
         <updated>2022-12-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Reinforcement learning agent achieving 30× higher performance in custom Gym environment]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://github.com/ash3327/SnowFight" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/View_Project-Deep%20Q--Learning%20Agent-4285F4?style=flat&amp;logo=github&amp;logoColor=white" alt="View Project" class="img_ev3q"></a></p>
+        <content type="html"><![CDATA[<p><a href="https://github.com/ash3327/SnowFight" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/View_Project-Deep%20Q--Learning%20Agent-4285F4?style=flat&amp;logo=github&amp;logoColor=white" alt="View Project" class="img_ev3q"></a> <a href="https://github.com/ash3327/SnowFight/blob/master/project%20report%20-%20group%205.pdf" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Report-4285F4?style=flat&amp;logo=github&amp;logoColor=white&amp;link=https://github.com/ash3327/SnowFight/blob/master/project%20report%20-%20group%205.pdf" alt="Report" class="img_ev3q"></a></p>
 <p><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Python-3776AB?style=flat&amp;logo=python&amp;logoColor=white" alt="Python" class="img_ev3q"></a>
 <a href="https://gymnasium.farama.org/index.html" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Gymnasium-8B9467?style=flat&amp;logo=openai" alt="Gymnasium" class="img_ev3q"></a>
 <img decoding="async" loading="lazy" src="https://img.shields.io/badge/Reinforcement_Learning-00BFFF?style=flat" alt="Reinforcement Learning" class="img_ev3q">
@@ -578,65 +648,77 @@ This project is a personal learning exercise in understanding and implementing d
         <category label="Deep Learning" term="Deep Learning"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Project: U-Net Segmentation]]></title>
-        <id>https://ash3327.github.io/personalblog/blog/unet-segmentation</id>
-        <link href="https://ash3327.github.io/personalblog/blog/unet-segmentation"/>
-        <updated>2022-08-04T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[99.55% pixel accuracy on Carvana dataset]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://github.com/ash3327/ImageSegmentation-UNet" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/View_Project-U--Net%20Segmentation-4285F4?style=flat&amp;logo=github&amp;logoColor=white" alt="View Project" class="img_ev3q"></a></p>
+        <title type="html"><![CDATA[Project: GAN Generation]]></title>
+        <id>https://ash3327.github.io/personalblog/blog/gan-generation</id>
+        <link href="https://ash3327.github.io/personalblog/blog/gan-generation"/>
+        <updated>2022-08-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[WGAN implementation on MNIST dataset]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://github.com/ash3327/GAN-self-learn-v1" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/View_Project-GAN%20Generation-4285F4?style=flat&amp;logo=github&amp;logoColor=white" alt="View Project" class="img_ev3q"></a></p>
 <p><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Python-3776AB.svg?logo=python&amp;logoColor=white" alt="Python" class="img_ev3q"></a>
 <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?logo=pytorch&amp;logoColor=white" alt="PyTorch" class="img_ev3q"></a>
-<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Artificial%20Intelligence%20(AI)-orange.svg?logo=ai&amp;logoColor=white" alt="Artificial Intelligence (AI)" class="img_ev3q">
-<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Image%20Segmentation-red.svg?logo=segmentation&amp;logoColor=white" alt="Image Segmentation" class="img_ev3q">
-<a href="https://www.kaggle.com/competitions/carvana-image-masking-challenge" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Kaggle-Carvana%20Image%20Masking%20Challenge-blue.svg?logo=kaggle&amp;logoColor=white" alt="Carvana Image Masking Challenge" class="img_ev3q"></a>
-<a href="https://www.cityscapes-dataset.com/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Dataset-Cityscapes%20Dataset-00BFFF.svg?logo=data:image/png;base64,iVBORw0KGg&amp;logoColor=white" alt="Cityscapes Dataset" class="img_ev3q"></a>
-<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Last%20Updated-December%202023-green.svg" alt="Last Updated: December 2023" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="backup-of-old-project-december-2023">Backup of Old Project (December 2023)<a href="https://ash3327.github.io/personalblog/blog/unet-segmentation#backup-of-old-project-december-2023" class="hash-link" aria-label="Direct link to Backup of Old Project (December 2023)" title="Direct link to Backup of Old Project (December 2023)">​</a></h2>
-<p>This is a backup of an old project focused on training a U-Net model from scratch for semantic segmentation from scratch on the Cityscapes dataset and Carvana dataset. The images are DOWNSCALED to speed up the training process for learning purposes.</p>
-<p>The model has been trained and tested with the following results:</p>
-<blockquote>
-<p>[!WARNING]
-If you are looking for a high-quality model, this is NOT the place. This is only a practice exercise when I was in year 2.</p>
-</blockquote>
+<img decoding="async" loading="lazy" src="https://img.shields.io/badge/GAN-Generative%20Adversarial%20Networks-blueviolet.svg" alt="Generative Adversarial Networks" class="img_ev3q">
+<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Dataset-MNIST-blue.svg" alt="MNIST Dataset" class="img_ev3q">
+<img decoding="async" loading="lazy" src="https://img.shields.io/badge/Last%20Updated-August%202022-green.svg" alt="Last Updated: August 2022" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="backup-of-gan-learning-project-august-2022">Backup of GAN Learning Project (August 2022)<a href="https://ash3327.github.io/personalblog/blog/gan-generation#backup-of-gan-learning-project-august-2022" class="hash-link" aria-label="Direct link to Backup of GAN Learning Project (August 2022)" title="Direct link to Backup of GAN Learning Project (August 2022)">​</a></h2>
 <blockquote>
 <p>[!NOTE]
-Training is done long ago and some parameters recorded, such as the number of epochs, may not be accurate</p>
+The project explores various GAN architectures and improvements through iterative versions.</p>
 </blockquote>
 <blockquote>
 <p>[!IMPORTANT]
-This project is done few years ago from the point of writing this documentation. Back then, the training details are not documented properly and the jupyter notebook results are not saved for each experiment. The results are not excellent either. Sorry for the inconvenience.</p>
+This project is a personal learning exercise in understanding and implementing different GAN techniques.</p>
 </blockquote>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="experiments">Experiments<a href="https://ash3327.github.io/personalblog/blog/unet-segmentation#experiments" class="hash-link" aria-label="Direct link to Experiments" title="Direct link to Experiments">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="carvana-dataset-carvana-image-masking-challenge-dataset-carvana-image-masking-challenge">Carvana Dataset (Carvana Image Masking Challenge Dataset) <a href="https://www.kaggle.com/competitions/carvana-image-masking-challenge" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Kaggle-Carvana%20Image%20Masking%20Challenge-blue.svg?logo=kaggle&amp;logoColor=white" alt="Carvana Image Masking Challenge" class="img_ev3q"></a><a href="https://ash3327.github.io/personalblog/blog/unet-segmentation#carvana-dataset-carvana-image-masking-challenge-dataset-carvana-image-masking-challenge" class="hash-link" aria-label="Direct link to carvana-dataset-carvana-image-masking-challenge-dataset-carvana-image-masking-challenge" title="Direct link to carvana-dataset-carvana-image-masking-challenge-dataset-carvana-image-masking-challenge">​</a></h3>
-<p>Dataset information</p>
+<p>This project re-implemented GAN, WGAN and conditional GAN and explored the typical problems that occurred with GAN-based architectures like mode collapse and sensitivity to hyperparameters.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="references">References<a href="https://ash3327.github.io/personalblog/blog/gan-generation#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References">​</a></h2>
 <ul>
-<li>Original image dimension: 1918 x 1280</li>
-<li>Training image dimension: 160 x 240 and 320 x 480</li>
+<li>The YouTube video series "Generative Adversarial Networks (GANs)", Aladdin Persson, at <a href="https://www.youtube.com/playlist?list=PLhhyoLH6IjfwIp8bZnzX8QR30TRcHO8Va" target="_blank" rel="noopener noreferrer">https://www.youtube.com/playlist?list=PLhhyoLH6IjfwIp8bZnzX8QR30TRcHO8Va</a></li>
 </ul>
-<p>Validation accuracies (highest)</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="setups">Setups<a href="https://ash3327.github.io/personalblog/blog/gan-generation#setups" class="hash-link" aria-label="Direct link to Setups" title="Direct link to Setups">​</a></h2>
+<p><strong>Environment</strong>:</p>
 <ul>
-<li>Validation Pixel Accuracy: <strong>0.9955</strong></li>
-<li>Validation Dice Score: <strong>0.9911</strong></li>
+<li>Python version: 3.x</li>
+<li>Framework: PyTorch</li>
+<li>Dataset: MNIST</li>
+<li>Runned on Google Colab</li>
 </ul>
-<h3 align="center"> Results </h3>
-<p>Results on test set: (Top: Prediction, Bottom: Reference)</p>
-<p><img decoding="async" loading="lazy" alt="alt text" src="https://ash3327.github.io/personalblog/assets/images/image-041267cdfd77e346a9d0e0d7d422bb48.png" width="520" height="341" class="img_ev3q"></p>
-<p>Results on train set: (Top: Prediction, Bottom: Reference)</p>
-<p><img decoding="async" loading="lazy" alt="alt text" src="https://ash3327.github.io/personalblog/assets/images/image2-78057b4210e74b5ab7ccbaae64eb9529.png" width="518" height="341" class="img_ev3q"></p>
-<p>Inspection of intermediate layers: (In the order: Prediction, Output of Downsampling Block 1, Output of Bottleneck Block, Output of Upsampling Block 1, Reference)</p>
-<p><img decoding="async" loading="lazy" alt="alt text" src="https://ash3327.github.io/personalblog/assets/images/image4-341eb0e84099144c4c517f3738e0f883.png" width="1008" height="501" class="img_ev3q"></p>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Details of the experiments</summary><div><div class="collapsibleContent_i85q"><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Normalization: mean 0, std 1</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Augments:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        transforms.RandomHorizontalFlip(p=0.5),</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        transforms.RandomVerticalFlip(p=0.1),</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        transforms.RandomRotation(degrees=35),</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**29/12/2023 17:15: result12_**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 160 x 240</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 32</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 5e-7</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: StepLR: step_size=5, gamma=0.85</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Epochs: 42</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Final: Test accuracy: 90.9%, Avg loss: 0.403125, Test recall: 0.5831877589225769, precision: 0.980972170829773</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**30/12/2023 08:40: result13_**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 160 x 240</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 32</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 1e-4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: ReduceLROnPlateau: patience=5</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Epochs: 50</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Final: Test accuracy: 81.0%, Avg loss: 0.775568, Test recall: 0.1010913997888565, precision: 0.9727051258087158</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**30/12/2023 11:33: result14_**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 160 x 240</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 32</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 1e-4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: ReduceLROnPlateau: patience=5</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Epochs: 100</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Final:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test accuracy: 96.6%, Avg loss: 0.210099, Test recall: 0.9129086136817932, precision: 0.927651584148407</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**30/12/2023 15:47: 1703922437**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 160 x 240</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 16</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 1e-4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: None</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test accuracy: 99.5%, Avg loss: 0.013175, </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test recall: 0.9918522238731384, precision: 0.9872172474861145, dice_score: 0.9895293116569519</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**30/12/2023 16:49: 1703926149**</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Downscaled image dimension: 320 x 480</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Batch size: 8</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Learning rate: 1e-4</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Decay: None</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Loss: BCEWithLogitsLoss</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test accuracy: 99.6%, Avg loss: 0.009994, </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test recall: 0.9942919611930847, precision: 0.9879629611968994, dice_score: 0.9911173582077026</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div></div></details>
-<hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cityscapes-dataset-cityscapes-dataset-cityscapes-dataset">Cityscapes Dataset (Cityscapes Dataset) <a href="https://www.cityscapes-dataset.com/" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Dataset-Cityscapes%20Dataset-00BFFF.svg?logo=data:image/png;base64,iVBORw0KGg&amp;logoColor=white" alt="Cityscapes Dataset" class="img_ev3q"></a><a href="https://ash3327.github.io/personalblog/blog/unet-segmentation#cityscapes-dataset-cityscapes-dataset-cityscapes-dataset" class="hash-link" aria-label="Direct link to cityscapes-dataset-cityscapes-dataset-cityscapes-dataset" title="Direct link to cityscapes-dataset-cityscapes-dataset-cityscapes-dataset">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="experiments">Experiments<a href="https://ash3327.github.io/personalblog/blog/gan-generation#experiments" class="hash-link" aria-label="Direct link to Experiments" title="Direct link to Experiments">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mnist-digit-generation">MNIST Digit Generation<a href="https://ash3327.github.io/personalblog/blog/gan-generation#mnist-digit-generation" class="hash-link" aria-label="Direct link to MNIST Digit Generation" title="Direct link to MNIST Digit Generation">​</a></h3>
+<p>Explored various GAN architectures:</p>
 <ul>
-<li>Test Pixel Accuracy: <strong>0.8669</strong></li>
-<li>The code for evaluating the mAP for the cityscape dataset has been lost. The code in this repository does not reflect the true results.</li>
+<li>Standard GAN</li>
+<li>Wasserstein GAN (WGAN)</li>
+<li>Conditional WGAN</li>
 </ul>
-<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">1704279189_cityscapes/model_1704284109.h5: </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">**Documented:** </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Test acc: 0.8402184247970581, Test loss: 0.6274673556908965</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-experiments">Key Experiments<a href="https://ash3327.github.io/personalblog/blog/gan-generation#key-experiments" class="hash-link" aria-label="Direct link to Key Experiments" title="Direct link to Key Experiments">​</a></h3>
+<ul>
+<li>Experimented with different learning rates</li>
+<li>Observed the phoenomenon of mode collapse and the sensitivity of the GAN architecture to the learning rate</li>
+<li>Understanding the architecture of GAN, improvements made by WGAN, and also the principles of providing class conditions to GANs</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="experiment-results">Experiment Results<a href="https://ash3327.github.io/personalblog/blog/gan-generation#experiment-results" class="hash-link" aria-label="Direct link to Experiment Results" title="Direct link to Experiment Results">​</a></h3>
+<ol>
+<li>
+<p>Vanilla GAN
+<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208011748_GAN_mnist_v2%20good/202208011748_GAN_mnist_v2_final.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v2-blue.svg" alt="Version v2" class="img_ev3q"></a>
+<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208021155_GAN_mnist_v3%20good%2Cinterupted/202208021155_GAN_mnist_v3.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v3-blue.svg" alt="Version v3" class="img_ev3q"></a>
+<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208041411_GAN_mnist_v4%20faster%20GAN/202208031401_GAN_mnist_v4_epoch100_ed.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v4-blue.svg" alt="Version v4" class="img_ev3q"></a></p>
+<table><tbody><tr><th>v2 (100 epochs)</th><th>v3 (35 epochs *early stopped)</th><th>v4 (100 epochs)</th></tr><tr><td><img src="https://ash3327.github.io/personalblog/img/docs/gan/v2.png" width="200" height="200"></td><td><img src="https://ash3327.github.io/personalblog/img/docs/gan/v3.png" width="200" height="200"></td><td><img src="https://ash3327.github.io/personalblog/img/docs/gan/v4.gif" width="200" height="200"></td></tr></tbody></table>
+</li>
+<li>
+<p>Wasserstein GAN (WGAN)
+<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208051901_GAN_mnist_v5_WGAN/202208051901_GAN_mnist_v5_WGAN%20epoch100.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v5-blue.svg" alt="Version v5" class="img_ev3q"></a></p>
+<table><tbody><tr><th>v5 (100 epochs)</th></tr><tr><td><img src="https://ash3327.github.io/personalblog/img/docs/gan/v5.gif" width="200" height="200"></td></tr></tbody></table>
+</li>
+<li>
+<p>Conditional Wasserstein GAN (incomplete)
+<a href="https://github.com/ash3327/GAN-self-learn-v1/blob/main/202208061306_GAN_mnist_v6_conditional%20WGAN/202208061306_GAN_mnist_v6_Conditional_WGAN.ipynb" target="_blank" rel="noopener noreferrer"><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Version-v6-blue.svg" alt="Version v6" class="img_ev3q"></a></p>
+</li>
+</ol>]]></content>
         <category label="Project" term="Project"/>
         <category label="PyTorch" term="PyTorch"/>
-        <category label="Segmentation" term="Segmentation"/>
-        <category label="Computer Vision" term="Computer Vision"/>
+        <category label="GAN" term="GAN"/>
         <category label="Deep Learning" term="Deep Learning"/>
+        <category label="Generative Models" term="Generative Models"/>
+        <category label="Computer Vision" term="Computer Vision"/>
     </entry>
 </feed>
