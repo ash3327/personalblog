@@ -7,11 +7,11 @@ tags: [Project, PyTorch, Computer Vision, Contrastive Learning, Deep Learning]
 image: /img/docs/fyp/image.png
 ---
 
-[![View Project](https://img.shields.io/badge/View_Project-Hand%20Gesture%20Recognition-4285F4?style=flat&logo=github&logoColor=white)](https://github.com/ash3327/major-fyp-2024)
+[![View Project](https://img.shields.io/badge/View_Project-Hand%20Gesture%20Recognition-4285F4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ash3327/major-fyp-2024) [![Report](https://img.shields.io/badge/Report-4285F4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ash3327/major-fyp-2024/blob/rework-1/docs/KTL2401_1155175983_1155174636_final_report_term2.pdf)
+
 
 # General Hand Gesture Recognition
 
-[![Report](https://img.shields.io/badge/Report-4285F4?style=flat&logo=github&logoColor=white)](https://github.com/ash3327/major-fyp-2024/blob/rework-1/docs/KTL2401_1155175983_1155174636_final_report_term2.pdf)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org/)
 ![Computer Vision](https://img.shields.io/badge/Computer_Vision-00BFFF?style=flat)
 ![Contrastive Learning](https://img.shields.io/badge/Contrastive_Learning-FF69B4?style=flat)
@@ -20,8 +20,6 @@ image: /img/docs/fyp/image.png
 ## Overview
 
 This project aims to create a unified, semi-supervised contrastive-learning framework for hand gesture recognition. The framework is designed to adapt efficiently to various downstream tasks, such as human-computer interaction and sign language recognition, with minimal retraining or fine-tuning.
-
-<!-- truncate -->
 
 ## Scope and Applications
 
@@ -46,13 +44,19 @@ This project aims to create a unified, semi-supervised contrastive-learning fram
 - **Objective**: Extend the contrastive learning approach to recognize dynamic gestures.
 - **Approach**: Utilize sequential architectures like Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM) units to model temporal dependencies in gesture sequences.
 
+<!-- truncate -->
+
 ### Results
 
 While not fully achieved the original goals, our key findings include:
 
 - **Static Gesture Recognition**:
   - Graph-based networks (e.g., GCN, GAT) are more effective, leveraging hand skeletal connections for improved accuracy and faster convergence.
-  - Using large unlabelled datasets with curriculum learning enhances model generalization to new datasets and unseen gesture classes.
+  - Using large unlabelled datasets with curriculum learning enhances model generalization to new datasets and unseen gesture classes (which is tested by observing the cosine similarities of the output feature vectors).
+    <img src="/personalblog/img/docs/fyp/curriculum-compare-plot.png" width="600"/> 
+  - Curriculum Learning with such a shallow model used produces degraded performance when the magnitude of augmentation exceeded a certain value
+    <img src="/personalblog/img/docs/fyp/curriculum-compare.png" height="400"/> 
+
 - **Dynamic Gesture Recognition**:
   - Hierarchical and part-wise architectures improve understanding of gesture structures.
   - Contrastive learning showed limited improvement over existing methods, indicating a need for more complex approaches.

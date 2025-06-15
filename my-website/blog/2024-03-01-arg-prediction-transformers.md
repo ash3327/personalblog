@@ -7,11 +7,17 @@ tags: [Project, Transformers, Bioinformatics, Machine Learning, Protein Analysis
 image: /img/docs/prottrans/image.png
 ---
 
-[![View Project](https://img.shields.io/badge/View_Project-ARG%20Prediction%20with%20Transformers-4285F4?style=flat&logo=github&logoColor=white)](https://github.com/ash3327/aist4010-coursework-asm2-protein-transformer)
+[![View Project](https://img.shields.io/badge/View_Project-ARG%20Prediction%20with%20Transformers-4285F4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ash3327/aist4010-coursework-asm2-protein-transformer) [![Report](https://img.shields.io/badge/Report-4285F4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ash3327/aist4010-coursework-asm2-protein-transformer/blob/main/report.pdf) 
 
 # ARG Prediction with Transformers
 
 Fine-tuned ProtTrans model for antibiotic resistance gene classification achieving 0.94 F-score.
+
+## Key Achievements
+
+- 0.94 F-score on ARG classification
+- Fine-tuned ProtTrans model
+- Robust bioinformatics pipeline
 
 <!-- truncate -->
 
@@ -24,12 +30,6 @@ Fine-tuned ProtTrans model for antibiotic resistance gene classification achievi
 * Code style may not be nice if you're trying to use this as your own reference for learning.
 
 * Here is the report: [Report](https://github.com/ash3327/aist4010-coursework-asm2-protein-transformer/blob/main/report.pdf)
-
-## Key Achievements
-
-- 0.94 F-score on ARG classification
-- Fine-tuned ProtTrans model
-- Robust bioinformatics pipeline
 
 ## Technologies Used
 

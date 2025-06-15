@@ -6,29 +6,6 @@
   width: 100%;
 }
 
-.profile {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  padding: 0 1rem;
-}
-
-.profile h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.profile h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--ifm-color-primary);
-}
-
-.profile p {
-  font-size: 1.1rem;
-  margin-top: 1rem;
-}
-
 .badges {
   display: flex;
   gap: 1rem;

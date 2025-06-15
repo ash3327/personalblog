@@ -7,7 +7,7 @@ tags: [Project, Python, Gymnasium, Reinforcement Learning, Deep Learning]
 image: https://github.com/ash3327/ash3327/assets/86100752/60f36fa1-d6fd-490b-b275-19bb1cbe9715
 ---
 
-[![View Project](https://img.shields.io/badge/View_Project-Deep%20Q--Learning%20Agent-4285F4?style=flat&logo=github&logoColor=white)](https://github.com/ash3327/SnowFight)
+[![View Project](https://img.shields.io/badge/View_Project-Deep%20Q--Learning%20Agent-4285F4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ash3327/SnowFight) [![Report](https://img.shields.io/badge/Report-4285F4?style=for-the-badge&logo=github&logoColor=white&link=https://github.com/ash3327/SnowFight/blob/master/project%20report%20-%20group%205.pdf)](https://github.com/ash3327/SnowFight/blob/master/project%20report%20-%20group%205.pdf)
 
 
 # Deep Q-Learning Shooter Game Project "SnowFight" 
@@ -27,6 +27,8 @@ image: https://github.com/ash3327/ash3327/assets/86100752/60f36fa1-d6fd-490b-b27
 
 <img src="https://github.com/ash3327/ash3327/assets/86100752/60f36fa1-d6fd-490b-b275-19bb1cbe9715" width="300" height="300"/>
 <img src="https://github.com/ash3327/ash3327/assets/86100752/9ac9a3e3-8e36-436c-bbd9-48b80c06e2d6" width="400"/>
+
+<!-- truncate -->
 
 ## Game Design
 - Survive a zombie apocalypse by controlling a snowball-throwing character.

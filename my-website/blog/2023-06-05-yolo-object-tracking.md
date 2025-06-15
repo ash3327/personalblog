@@ -7,8 +7,7 @@ tags: [Project, YOLO, Object Detection, Computer Vision, Tracking]
 image: /img/img/docs/yolo-1/yolo-1/vid3.gif
 ---
 
-[![View Project](https://img.shields.io/badge/View_Project-YOLO%20Object%20Tracking-4285F4?style=flat&logo=github&logoColor=white)](https://github.com/ash3327/ObjectDetection-v1)
-
+[![View Project](https://img.shields.io/badge/View_Project-YOLO%20Object%20Tracking-4285F4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ash3327/ObjectDetection-v1)
 
 # ObjectDetection-v1
 [![Python](https://img.shields.io/badge/Python-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/) 
@@ -17,6 +16,14 @@ image: /img/img/docs/yolo-1/yolo-1/vid3.gif
 ![Artificial Intelligence (AI)](https://img.shields.io/badge/Artificial%20Intelligence%20(AI)-orange.svg?logo=ai&logoColor=white)
 ![Object Detection](https://img.shields.io/badge/Object%20Detection-EE4C2C.svg?logo=object-detection&logoColor=white)
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-June%202023-green.svg)
+
+## Overview
+
+This is a backup of an old project that focused on object detection and tracking over videos using **YOLOv8**.
+
+Applied Abrewley's Sort Library and self-implemented instance label assigning function based on maximum overlap to stablize the labelled id on each car moving across frames.
+
+<!-- truncate -->
 
 ## Backup of Old Project (June 2023)
 
@@ -27,7 +34,7 @@ This is a backup of an old project that focused on object detection and tracking
 
 The project was written in Python and uses the YOLOv8 object detection model.
 
-## Execution
+<!-- ## Execution
 
 Start a new virtual environment:
 ```bash
@@ -39,7 +46,7 @@ Then install the requirements:
 ```bash
 pip install -r requirements.txt
 ```
-Finally, run the jupyter notebook `Object Detection.ipynb` within the virtual environment.
+Finally, run the jupyter notebook `Object Detection.ipynb` within the virtual environment. -->
 
 ## About the Project / Key Features
 

@@ -7,12 +7,11 @@ tags: [Project, Python, Networking, Real-time Communication, P2P]
 image: /img//img/docs/p2p/p2p/image.png
 ---
 
-[![View Project](https://img.shields.io/badge/View_Project-P2P%20Communication%20App-4285F4?style=flat&logo=github&logoColor=white)](https://github.com/ash3327/Peer-to-Peer-Communication-App)
+[![View Project](https://img.shields.io/badge/View_Project-P2P%20Communication%20App-4285F4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ash3327/Peer-to-Peer-Communication-App)
 
 # Peer-to-Peer Communication App
 
-[![GitHub](https://img.shields.io/badge/public%20repo-github-%2324292e.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ash3327/Peer-to-Peer-Communication-App)
-![Last Commit](https://img.shields.io/badge/last%20commit-Apr%202024-%23FFA500.svg?style=for-the-badge&logo=git&logoColor=white)
+![Last Commit](https://img.shields.io/badge/last%20commit-Apr%202024-%23FFA500.svg?style=flat&logo=git&logoColor=white)
 
 A fork of the project in the semester 2023-24 Term 2, creating a peer-to-peer communication app supporting audio recording, waveform display and editing, and also screen share function. 
 
@@ -23,6 +22,8 @@ A fork of the project in the semester 2023-24 Term 2, creating a peer-to-peer co
   - Audio recording
   - Screen sharing
 - Synchronization and handling of audio and video streams from multiple users so that they do not hear their own voices
+
+<!-- truncate -->
 
 <table>
   <tr>
@@ -52,7 +53,7 @@ The calls between server and clients, visualized:
 
 - Functions that allows usage over the internet are not implemented yet due to problems in port forwarding that requires extra care
 
-## Installation
+<!-- ## Installation
 
 To install this package, perform the following:
 
@@ -185,4 +186,4 @@ I/created_room          : {'status': 'room already exists', 'room': 'room 4'}
 Failed to create room.
 I/list_rooms            : {'rooms': ['hello', 'world', 'room 4']}
 ```
-</details>
+</details> -->

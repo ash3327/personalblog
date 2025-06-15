@@ -3,19 +3,30 @@ title: "Project: Event-Planning App \"Oasis\""
 description: Android event planning app with robust notification system and SQL database
 slug: oasis-event-planning-app
 # authors: [ash3327]
-tags: [Project, Java, Android, RoomDB, Mobile Development]
+tags: [Project, Self Project, Java, Android, RoomDB, Mobile Development, SQL]
 image: /img/docs/oasis/image.png
 ---
 
-[![View Project](https://img.shields.io/badge/View_Project-Event--Planning%20App%20'Oasis'-4285F4?style=flat&logo=github&logoColor=white)](https://github.com/ash3327/OasisPlanner/tree/development)
+[![View Project](https://img.shields.io/badge/View_Project-Event--Planning%20App%20'Oasis'-4285F4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ash3327/OasisPlanner/tree/development)
 
 
 # OasisPlanner 
-_Calendar App Project_ (Developing Phase)
+
+Android event planning app written in Java, with the following features:
+* Alarm-setting and Event Organization with SQL via RoomDatabase
+* Allows the user to add (1) a large number of dates to each task, and (2) switch to the "same day-of-week" view for simple date-picking especially for recurring events
+* Notification System
+
+<img src="https://github.com/ash3327/ash3327/assets/86100752/3548ccde-c41b-440f-af3d-4f35303066e4" width="200"/>
+<img src="https://github.com/ash3327/ash3327/assets/86100752/43f12dbf-4ab5-45ec-9f50-6086b3f7e601" width="200"/>
+<img src="https://github.com/ash3327/ash3327/assets/86100752/82471662-dfac-44f0-bbc5-c06190d2a21e" width="200"/>
+
+
+<!-- truncate -->
 
 > [!INFO]
-> * Still under development and the functionalities are not completed yet.
 > * Distributable version not delivered yet.
+> * The development process is halted to make room for the author to focus on learning ML.
 
 ## Our Goals
 

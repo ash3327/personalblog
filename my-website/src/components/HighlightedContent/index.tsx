@@ -72,27 +72,6 @@ export default function HighlightedContent(): ReactNode {
 
   return (
     <section className={styles.highlighted}>
-      <div className={styles.profile}>
-        <h1>Hi there👋, I'm Sam</h1>
-        {/* <h3>Fresh Graduate, Interest in Machine Learning (Computer Vision and RL)</h3> */}
-        
-        <div className={styles.badges}>
-          <a href="https://ash3327.github.io">
-            <img src="https://img.shields.io/badge/Portfolio%20Website-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/>
-          </a>
-          {/* <a href="https://ash3327.github.io/personalblog">
-            <img src="https://img.shields.io/badge/Blog%20(In%20Progress)-0097A7?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Blog"/>
-          </a> */}
-          <a href="https://www.linkedin.com/in/khtam-51a008256">
-            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-          </a>
-        </div>
-
-        <p>Fresh Graduate Graduating with B.Eng. in Artificial Intelligence at CUHK (July 2025)<br/>
-        GPA: 3.755/4.00 (overall), 3.795/4.00 (major) | Dean's List 2021-24<br/>
-        Interests in Machine Learning (Computer Vision and RL)</p>
-      </div>
-
       <div className={styles.sections}>
         <div className={styles.section}>
           <h2>💼 Experiences</h2>

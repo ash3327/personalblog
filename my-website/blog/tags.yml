@@ -1,19 +1,15 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+PyTorch:
+  label: PyTorch
+  permalink: /pytorch
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+HuggingFace:
+  label: HuggingFace
+  permalink: /huggingface
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+RoomDB:
+  label: RoomDB
+  permalink: /roomdb
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+P2P:
+  label: P2P
+  permalink: /p2p

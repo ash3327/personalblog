@@ -1,35 +1,43 @@
 import {useRef, useEffect, useState} from 'react';
 import type {ReactNode} from 'react';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaFileAlt } from 'react-icons/fa';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import {FeatureList, type FeatureItem} from '../../data/projects';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-function Feature({title, image, description, link, githubLink, badges, highlighted, date}: FeatureItem) {
+const filterTags = ['all', 'featured', 'computer-vision', 'reinforcement-learning', 'transformers', 'software-development'];
+type FilterTag = 'all' | 'featured' | 'computer-vision' | 'reinforcement-learning' | 'transformers' | 'software-development';
+
+function Feature({title, image, description, link, githubLink, reportLink, badges, highlighted, date}: FeatureItem) {
   const {siteConfig} = useDocusaurusContext();
   return (
     <div className={clsx(styles.featureCard, highlighted && styles.highlightedCard)}>
       {highlighted && <div className={styles.highlightedBadge}>Featured</div>}
       <div className={styles.featureImage}>
-        <img src={image.startsWith('/') ? `/${siteConfig.projectName}${image}` : image} alt={title} />
+        <img src={image ? (image.startsWith('/') ? `/${siteConfig.projectName}${image}` : image) : `/${siteConfig.projectName}/img/placeholder.png`} alt={title} />
       </div>
       <div className={styles.featureContent}>
         <Heading as="h3">
           <a href={link.startsWith('/') ? `/${siteConfig.projectName}${link}` : link}>{title}</a>
         </Heading>
-        <p>{description}</p>
         <p className={styles.date}>{date}</p>
+        <p>{description}</p>
         <div className={styles.badges}>
           {badges.map((badge: string, idx: number) => (
-            <span key={idx} className={styles.badge}>
+            <a key={idx} href={`/personalblog/blog/tags/${badge.toLowerCase().replace(/\s+/g, '-')}`} className={styles.badge}>
               {badge}
-            </span>
+            </a>
           ))}
           <a href={githubLink} className={styles.githubBadge} target="_blank" rel="noopener noreferrer">
             <FaGithub className={styles.githubIcon} /> GitHub
           </a>
+          {reportLink && (
+            <a href={reportLink.startsWith('/') ? `/${siteConfig.projectName}${reportLink}` : reportLink} className={styles.githubBadge}>
+              <FaFileAlt className={styles.reportIcon} /> Report
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -38,11 +46,39 @@ function Feature({title, image, description, link, githubLink, badges, highlight
 
 export default function HomepageFeatures(): ReactNode {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [showFeaturedOnly, setShowFeaturedOnly] = useState(true);
+  const [activeFilter, setActiveFilter] = useState<FilterTag>('featured');
 
-  const filteredProjects = showFeaturedOnly 
-    ? FeatureList.filter(project => project.highlighted)
-    : FeatureList;
+  const filteredProjects = FeatureList.filter(project => {
+    switch (activeFilter) {
+      case 'featured':
+        return project.highlighted;
+      case 'computer-vision':
+        return project.badges.some(badge => 
+          badge.toLowerCase().includes('vision') || 
+          badge.toLowerCase().includes('yolo') ||
+          badge.toLowerCase().includes('segmentation')
+        );
+      case 'reinforcement-learning':
+        return project.badges.some(badge => 
+          badge.toLowerCase().includes('reinforcement') || 
+          badge.toLowerCase().includes('gymnasium')
+        );
+      case 'transformers':
+        return project.badges.some(badge => 
+          badge.toLowerCase().includes('transformer') || 
+          badge.toLowerCase().includes('huggingface')
+        );
+      case 'software-development':
+        return project.badges.some(badge => 
+          badge.toLowerCase().includes('java') || 
+          badge.toLowerCase().includes('android') ||
+          badge.toLowerCase().includes('flask') ||
+          badge.toLowerCase().includes('socket')
+        );
+      default:
+        return true;
+    }
+  });
 
   useEffect(() => {
     const container = containerRef.current;
@@ -74,18 +110,28 @@ export default function HomepageFeatures(): ReactNode {
       container.removeEventListener('scroll', updateFisheye);
       window.removeEventListener('resize', updateFisheye);
     };
-  }, [showFeaturedOnly]); // Re-run effect when filter changes
+  }, [activeFilter]);
 
   return (
     <section className={styles.features}>
       <div className={styles.sectionHeader}>
         <h2>🚀 Projects</h2>
-        <button 
-          className={clsx(styles.toggleButton, !showFeaturedOnly && styles.active)}
-          onClick={() => setShowFeaturedOnly(!showFeaturedOnly)}
-        >
-          {showFeaturedOnly ? 'Show All Projects' : 'Show Featured Only'}
-        </button>
+        <div className={styles.filterTags}>
+          {filterTags.map((filter) => (
+            <button 
+              key={filter}
+              className={clsx(styles.filterTag, activeFilter === filter && styles.active)}
+              onClick={() => setActiveFilter(filter as FilterTag)}
+            >
+              {filter.replace('-', ' ').replace(/(^\w|\s\w)/g, str => str.toUpperCase())}
+            </button>
+          ))}
+          <button 
+            className={styles.filterTag}
+          >
+            <a href="/personalblog/blog/tags">More Tags</a>
+          </button>
+        </div>
       </div>
       <div className={styles.featuresContainer} ref={containerRef}>
         {filteredProjects.map((props: FeatureItem, idx: number) => (
